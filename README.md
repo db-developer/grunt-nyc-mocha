@@ -1,7 +1,5 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![codecov](https://codecov.io/gh/db-developer/grunt-nyc-mocha/branch/master/graph/badge.svg)](https://codecov.io/gh/db-developer/grunt-nyc-mocha)
-[![Custom badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdb-developer%2Fgrunt-nyc-mocha%2Fmaster%2Fdocs%2Fapi%2Fjsdocs.json)](https://github.com/db-developer/grunt-nyc-mocha#grunt-nyc-mocha)
-[![jsdocs](https://codecov.io/gh/db-developer/grunt-nyc-mocha/branch/master/graph/badge.svg)](https://codecov.io/gh/db-developer/grunt-nyc-mocha)
 [![Build Status](https://travis-ci.com/db-developer/grunt-nyc-mocha.svg?branch=master)](https://travis-ci.com/db-developer/grunt-nyc-mocha)
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.svg)](https://gruntjs.com/)
 

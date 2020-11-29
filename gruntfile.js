@@ -8,13 +8,14 @@ const path          = require( "path"            );
 const strings       = require( "./.conf/strings" );
 
 const env = {
-  BUILDDIR:     `${ strings.BUILD    }`,
-  CONFDIR:      `${ strings.DOT      }${ strings.CONF }`,
+  BUILDDIR:     `${ strings.BUILD }`,
+  CONFDIR:      `${ strings.DOT   }${ strings.CONF }`,
   COVERAGEDIR:  path.join( `${ strings.DIST  }`, `${ strings.COVERAGE }` ),
-  DISTDIR:      `${ strings.DIST     }`,
+  DOCSDIR:      `${ strings.DOCS  }`,
+  DISTDIR:      `${ strings.DIST  }`,
   LIBDIR:       path.join( `${ strings.SRC   }`, `${ strings.LIB }`     ),
   SCRITPSDIR:   path.join( `${ strings.SRC   }`, `${ strings.SCRIPTS }` ),
-  SRCDIR:       `${ strings.SRC      }`,
+  SRCDIR:       `${ strings.SRC   }`,
   STRINGS:      strings,
   TASKSDIR:     path.join( `${ strings.SRC   }`, `${ strings.TASKS }` ),
   TESTDIR:      path.join( `${ strings.SRC   }`, `${ strings.TEST  }`, `${ strings.ANY }` )

@@ -19,8 +19,11 @@ module.exports  = function ( grunt, options ) {
           src:  [ "*.md", "package.json", "LICENSE" ],
           dest: `${ options.BUILDDIR }/`
         },{
+          expand: true,
+          flatten: true,
+          filter: "isFile",
           src:  [ `${ options.DOCSDIR }/**/*.md` ],
-          dest: `${ options.BUILDDIR }/`
+          dest: `${ options.BUILDDIR }/docs/`
         },{
           expand: true,
           flatten: true,

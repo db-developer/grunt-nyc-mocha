@@ -12,6 +12,12 @@
     "type": "git",
     "url": "git+https://github.com/db-developer/grunt-nyc-mocha.git"
   },
+  "scripts": {
+    "all": "grunt all",
+    "build": "grunt build",
+    "coverage": "grunt coverage",
+    "test": "grunt test"
+  },
   "keywords": [
     "grunt",
     "nyc",

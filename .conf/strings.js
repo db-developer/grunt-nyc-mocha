@@ -9,6 +9,7 @@ module.exports = {
   BUILD:    "build",
   BUILDWP:  "webpack_build",
   BUILDRO:  "rollup_build",
+  CLEAN:    "clean",
   CONF:     "conf",
   COVERAGE: "coverage",
   DEFAULT:  "default",

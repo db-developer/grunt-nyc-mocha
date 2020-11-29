@@ -41,6 +41,10 @@ module.exports = function( grunt ) {
   grunt.registerTask( strings.BUILDRO, [ strings.ESLINT, "clean:build", "mkdir", "copy:build",
                                          "rollup:build", "shell:npm_pack" ]);
 
+  // run coverage
+  grunt.registerTask( strings.COVERAGE, [ strings.ESLINT, strings.CLEAN, "mkdir", "copy:test",
+                                          "mocha_istanbul" ]);
+
   // run default
   grunt.registerTask( strings.DEFAULT, [ strings.ALL ]);
 
@@ -51,6 +55,6 @@ module.exports = function( grunt ) {
   grunt.registerTask( strings.DIST,    [ strings.TEST, strings.BUILD, "move:distribute" ]);
 
   // run test
-  grunt.registerTask( strings.TEST,    [ "eslint", "clean", "mkdir", "copy:test",
+  grunt.registerTask( strings.TEST,    [ strings.ESLINT, strings.CLEAN, "mkdir", "copy:test",
                                          "mocha_istanbul" ]);
 };

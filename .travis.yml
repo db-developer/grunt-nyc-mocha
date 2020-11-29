@@ -7,10 +7,6 @@ language: node_js
 node_js:
   - 10
 
-# not required as of 2016(?)
-# before_script:
-#  - npm install -g grunt-cli
-
 before_script:
   - npm install -g codecov
 

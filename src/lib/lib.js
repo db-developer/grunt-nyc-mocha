@@ -60,47 +60,6 @@ function isArray( grunt, options, name, callback ) {
   else throw new Error( _STRINGS.MSG_ARRAY_EXPECTED.replace( _STRINGS.TAG_NAME, name ));
 }
 
-
-/**
- *  Run a watermark check based on task options and the coverage*.json
- *  file from an earlier test run.
- *//*
-function executeWatermarksCheck( grunt, callback, coverageFolder, options ) {
-  const args  = [];
-  const check = options.check;
-
-  if (( check.statements !== false ) || ( check.lines    !== false ) ||
-      ( check.functions  !== false ) || ( check.branches !== false )) {
-
-        grunt.verbose.ok( 'Will execute: ', options.nodeExec + ' ' + args.join(' '));
-
-        if ( ! options.dryRun ) {
-             grunt.util.spawn({
-               cmd: options.nodeExec,
-               args: args,
-               opts: {
-                 env: process.env,
-                 cwd: options.cwd,
-                 stdio: options.quiet ? 'ignore' : 'inherit'
-               }
-             }, function ( error ) {
-               if ( error ) {
-                    callback && callback( error );
-                    return;
-               }
-               callback && callback( null, 'Done. Minimum coverage threshold succeeded.' );
-             });
-          return;
-        }
-        else {
-          callback && callback( null, 'Would also execute post cover: ' + options.nodeExec + ' ' + args.join(' '));
-          return;
-        }
-  }
-  callback && callback();
-}*/
-
-
 /* eslint-disable */
 // Module exports:
 Object.defineProperty( module.exports, _STRINGS.GETMOCHAPATH,     {

@@ -98,19 +98,6 @@ function runTaskNYCMocha( grunt, task ) {
          promise = promise.then(( obj ) => { // run the tests...
                      return executeNYCMocha( grunt, task, obj );
                    });
-
-/*
-         promise = promise.then(() => { // prepare arguments for watermark check
-                     return _m.wmopts.toArgs.call( this, grunt );
-                   });
-         promise = promise.then(( obj ) => { // run watermark check
-                     returen _m.lib.executeWatermarksCheck.call( this, grunt, obj );
-                   });
-  return promise.then(( value ) => { done( true ); }( error ) => {
-           grunt.log.error( error );
-           done( false );
-         });
-*/
   return promise;
 }
 

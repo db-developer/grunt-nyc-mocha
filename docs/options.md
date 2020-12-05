@@ -29,11 +29,11 @@ See [node command-line options](https://nodejs.org/api/cli.html) for possible va
 * _nyc_ {Object} [defaults to:<code>{ /* find default properties below*/ }</code> ]  
 nyc configuration section.
 
-  * _nyc.all_ {Boolean} [default see nyc --all, -a]
+  * _nyc.all_ {Boolean} [default see nyc --all, -a]  
 Whether or not to instrument all files of the project (not just the ones touched
 by your test suite)
 
-  * _nyc.clean_ {Boolean} [default see nyc --clean]
+  * _nyc.clean_ {Boolean} [default see nyc --clean]  
 Clean .nyc_output folder before testing?
 
   * _nyc.coverage_ {Object} [defaults to:<code>{ dir: "coverage", reporter: "text" }</code> ]  

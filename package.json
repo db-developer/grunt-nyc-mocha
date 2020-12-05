@@ -1,7 +1,7 @@
 {
   "name": "grunt-nyc-mocha",
   "version": "0.0.4",
-  "description": "",
+  "description": "grunt task for running tests and coverage, based on nyc and mocha.",
   "author": "Dirk Brenckmann <db.developer@gmx.de>",
   "license": "MIT",
   "engines": {
@@ -21,7 +21,9 @@
   "keywords": [
     "grunt",
     "nyc",
-    "mocha"
+    "mocha",
+    "coverage",
+    "test"
   ],
   "files": [
     "docs",

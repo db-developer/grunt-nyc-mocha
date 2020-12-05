@@ -1,10 +1,11 @@
+# grunt-nyc-mocha #
+
+grunt task for running tests and coverage, based on nyc and mocha.
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![codecov](https://codecov.io/gh/db-developer/grunt-nyc-mocha/branch/master/graph/badge.svg)](https://codecov.io/gh/db-developer/grunt-nyc-mocha)
 [![Build Status](https://travis-ci.com/db-developer/grunt-nyc-mocha.svg?branch=master)](https://travis-ci.com/db-developer/grunt-nyc-mocha)
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.svg)](https://gruntjs.com/)
-
-# grunt-nyc-mocha #
-
 
 ## content ##
 

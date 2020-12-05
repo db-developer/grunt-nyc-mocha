@@ -177,8 +177,10 @@ module.exports = function ( grunt, options ) {
         temp:           false,              // directory to output raw coverage information
       },                                    //           ... which defaults to .nyc_output
       mocha: {
+        bail:           undefined,          // abort ("bail") after first test failure
         color:          false,              // force colored output
         exec:           false,              // path to node_modules/.../mocha script
+        exit:           false,              // force Mocha to quit after tests complete
         opts:           false,              // additional options not covered by plugin
         recursive:      false,              // look for tests in subdirectories
         timeout:        false,              // test timeout threshold (millis)

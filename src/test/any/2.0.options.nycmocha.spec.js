@@ -585,6 +585,62 @@ const path      = require( "path" );
                               .catch(( error ) => { done( error ); })
                        }).not.to.throwException();
       });
+      it( "should be callable with parameters 'grunt' {grunt}, 'task' {task}, 'options' {object} and resolve (options.mocha.bail = false)", ( done ) => {
+          const  bail = false;
+          const  options = nycmo.getTaskOptions( env.task );
+                 options.mocha.bail = bail;
+          expect(() => { nycmo.toArgsImpl( env.grunt, env.task, options )
+                              .then(( value ) => {
+                                      // console.log( value.args );
+                                      expect( value ).to.be.an( "object" );
+                                      expect( value.args.includes( "--bail" )).to.be.ok();
+                                      done();
+                               })
+                              .catch(( error ) => { done( error ); })
+                       }).not.to.throwException();
+      });
+      it( "should be callable with parameters 'grunt' {grunt}, 'task' {task}, 'options' {object} and resolve (options.mocha.bail = true)", ( done ) => {
+          const  bail = true;
+          const  options = nycmo.getTaskOptions( env.task );
+                 options.mocha.bail = bail;
+          expect(() => { nycmo.toArgsImpl( env.grunt, env.task, options )
+                              .then(( value ) => {
+                                      // console.log( value.args );
+                                      expect( value ).to.be.an( "object" );
+                                      expect( value.args.includes( "--bail" )).to.be.ok();
+                                      done();
+                               })
+                              .catch(( error ) => { done( error ); })
+                       }).not.to.throwException();
+      });
+      it( "should be callable with parameters 'grunt' {grunt}, 'task' {task}, 'options' {object} and resolve (options.mocha.exit = false)", ( done ) => {
+          const  exit = false;
+          const  options = nycmo.getTaskOptions( env.task );
+                 options.mocha.exit = exit;
+          expect(() => { nycmo.toArgsImpl( env.grunt, env.task, options )
+                              .then(( value ) => {
+                                      // console.log( value.args );
+                                      expect( value ).to.be.an( "object" );
+                                      expect( value.args.includes( "--exit" )).not.to.be.ok();
+                                      done();
+                               })
+                              .catch(( error ) => { done( error ); })
+                       }).not.to.throwException();
+      });
+      it( "should be callable with parameters 'grunt' {grunt}, 'task' {task}, 'options' {object} and resolve (options.mocha.exit = true)", ( done ) => {
+          const  exit = true;
+          const  options = nycmo.getTaskOptions( env.task );
+                 options.mocha.exit = exit;
+          expect(() => { nycmo.toArgsImpl( env.grunt, env.task, options )
+                              .then(( value ) => {
+                                      // console.log( value.args );
+                                      expect( value ).to.be.an( "object" );
+                                      expect( value.args.includes( "--exit" )).to.be.ok();
+                                      done();
+                               })
+                              .catch(( error ) => { done( error ); })
+                       }).not.to.throwException();
+      });
       it( "should be callable with parameters 'grunt' {grunt}, 'task' {task}, 'options' {object} and resolve (options.mocha.timeout = 30000)", ( done ) => {
           const  timeout = 30000;
           const  options = nycmo.getTaskOptions( env.task );

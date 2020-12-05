@@ -22,12 +22,14 @@ const _STRINGS = {
   FALSE:                          `${ false }`,
   GETOPTIONS:                     "getOptions",
   GETTASKOPTIONS:                 "getTaskOptions",
+  OPTIONS_BAILOUT:                "--bail",
   OPTIONS_BRANCHES:               "--branches",
   OPTIONS_CHECK_COVERAGE:         "--check-coverage",
   OPTIONS_CLEAN:                  "--clean",
   OPTIONS_COLOR:                  "--color",
   OPTIONS_CWD:                    "--cwd",
   OPTIONS_EXCLUDE:                "--exclude",
+  OPTIONS_EXIT:                   "--exit",
   OPTIONS_EXTENSION:              "--extension",
   OPTIONS_FUNCTIONS:              "--functions",
   OPTIONS_INCLUDE:                "--include",
@@ -95,8 +97,10 @@ function getNYCOptions() {
 
 function getMochaOptions() {
   return {
+    bail:           undefined,           // abort ("bail") after first test failure
     color:          false,              // force colored output
     exec:           false,              // path to node_modules/.../mocha script
+    exit:           false,              // force Mocha to quit after tests complete
     opts:           false,              // additional mocha options not coveredby plugin
     recursive:      false,              // look for tests in subdirectories
     timeout:        false,              // test timeout threshold (millis)
@@ -340,6 +344,23 @@ function toArgsImpl( grunt, task, options ) {
            options.mocha.exec = _m.lib.getMochaPath();
       }
       args.push( options.mocha.exec );
+
+      /*
+       *  mocha:  bailout on first test failure --bail, -b
+       */
+      if ( options.mocha.bail === true ) {
+           args.push( _STRINGS.OPTIONS_BAILOUT, _STRINGS.TRUE );
+      }
+      else if ( options.mocha.bail === false ) {
+           args.push( _STRINGS.OPTIONS_BAILOUT, _STRINGS.FALSE );
+      }
+
+      /*
+       *  mocha:  exit  force mocha to leave after completing tests --exit
+       */
+      if ( options.mocha.exit === true ) {
+           args.push( _STRINGS.OPTIONS_EXIT );
+      }
 
       /*
        *  mocha:  test timeout threshold (in milliseconds) --timeout

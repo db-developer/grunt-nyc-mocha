@@ -1,6 +1,6 @@
 {
   "name": "grunt-nyc-mocha",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "author": "Dirk Brenckmann <db.developer@gmx.de>",
   "license": "MIT",

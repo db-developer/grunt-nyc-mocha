@@ -106,6 +106,9 @@ Directory to output raw coverage information to.
 mocha configuration section.  
 If you are missing any option, you may pass it via _mocha.opts_ array.
 
+  * _mocha.bail_ {Boolean} [default see mocha --bail, -b]  
+Abort ("bail") after first test failure.
+
   * _mocha.color_ {Boolean} [default see mocha --color, -c, -colors]  
 Color TTY output from reporter?
 
@@ -113,6 +116,9 @@ Color TTY output from reporter?
 At the time of this writing, this option is not required, because the mocha main
 script can be resolved by <code>require.resolve( "mocha/bin/_mocha" )</code>.
 In case of any future changes, the mocha main script may be set at this point.
+
+  * _mocha.exit_ {Boolean} [default see mocha --exit]  
+Force Mocha to quit after tests complete.
 
   * _mocha.opts_ {Array&lt;string&gt;} [default: false]  
 See [mocha command-line interface](https://mochajs.org/api/mocha). Beyond that,

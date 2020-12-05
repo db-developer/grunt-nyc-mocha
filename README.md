@@ -10,7 +10,7 @@
 
 * Usage
   * [Getting started guide (see 'getting started' below)](#getting-started)
-  * [Referenace of all available options](docs/options.md)
+  * [Reference of all available options](docs/options.md)
   * [Sourcemap support](docs/sourcemapsupport.md)
 
 * Developers

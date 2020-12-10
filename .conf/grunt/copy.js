@@ -16,7 +16,7 @@ module.exports  = function ( grunt, options ) {
     build: {
       files: [
         {
-          src:  [ "*.md", "package.json", "LICENSE" ],
+          src:  [ "*.md", "!package.json", "LICENSE" ],
           dest: `${ options.BUILDDIR }/`
         },{
           expand: true,

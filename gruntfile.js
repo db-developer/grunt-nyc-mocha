@@ -35,15 +35,15 @@ module.exports = function( grunt ) {
   // run lint and all tests by default before packaging
   grunt.registerTask( strings.BUILD,   [ strings.BUILDRO ]);
 
-  grunt.registerTask( strings.BUILDWP, [ strings.ESLINT, "clean:build", "mkdir", "copy:build",
+  grunt.registerTask( strings.BUILDWP, [ strings.ESLINT, "clean:build", "mkdir", "copy:build", "jsonfile",
                                          "webpack:build", "shell:npm_pack" ]);
 
-  grunt.registerTask( strings.BUILDRO, [ strings.ESLINT, "clean:build", "mkdir", "copy:build",
+  grunt.registerTask( strings.BUILDRO, [ strings.ESLINT, "clean:build", "mkdir", "copy:build", "jsonfile",
                                          "rollup:build", "shell:npm_pack" ]);
 
   // run coverage
-  grunt.registerTask( strings.COVERAGE, [ strings.ESLINT, strings.CLEAN, "mkdir", "copy:test",
-                                          "mocha_istanbul" ]);
+  grunt.registerTask( strings.COVERAGE, [ strings.ESLINT, strings.CLEAN, "mkdir",
+                                          "copy:test", "mocha_istanbul" ]);
 
   // run default
   grunt.registerTask( strings.DEFAULT, [ strings.ALL ]);

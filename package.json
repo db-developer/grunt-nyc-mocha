@@ -50,6 +50,7 @@
     "grunt-contrib-clean": "^2.0.0",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-eslint": "^23.0.0",
+    "grunt-jsonfile": "^0.2.0",
     "grunt-mkdir": "^1.0.0",
     "grunt-mocha": "^1.2.0",
     "grunt-mocha-istanbul": "^5.0.2",

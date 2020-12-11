@@ -29,32 +29,34 @@ module.exports = function( grunt ) {
   require( "load-grunt-tasks"  )( grunt );
 
   // run lint and all tests by default before packaging
-  grunt.registerTask( strings.ALL,     [ strings.TEST, strings.BUILD,
-                                         "copy:deploy", "move:distribute" ]);
+  grunt.registerTask( strings.ALL,     [ strings.TEST, strings.BUILD, `${ strings.COPY }:deploy`,
+                                         "move:distribute" ]);
 
   // run lint and all tests by default before packaging
   grunt.registerTask( strings.BUILD,   [ strings.BUILDRO ]);
 
-  grunt.registerTask( strings.BUILDWP, [ strings.ESLINT, "clean:build", "mkdir", "copy:build", "jsonfile",
+  grunt.registerTask( strings.BUILDWP, [ strings.ESLINT, `${ strings.CLEAN }:build`, strings.MKDIR,
+                                         `${ strings.COPY }:build`, strings.JSONFILE,
                                          "webpack:build", "shell:npm_pack" ]);
 
-  grunt.registerTask( strings.BUILDRO, [ strings.ESLINT, "clean:build", "mkdir", "copy:build", "jsonfile",
+  grunt.registerTask( strings.BUILDRO, [ strings.ESLINT, `${ strings.CLEAN }:build`, strings.MKDIR,
+                                         `${ strings.COPY }:build`, strings.JSONFILE,
                                          "rollup:build", "shell:npm_pack" ]);
 
   // run coverage
-  grunt.registerTask( strings.COVERAGE, [ strings.ESLINT, strings.CLEAN, "mkdir",
-                                          "copy:test", "mocha_istanbul" ]);
+  grunt.registerTask( strings.COVERAGE, [ strings.ESLINT, strings.CLEAN, strings.MKDIR,
+                                          `${ strings.COPY }:test`, "mocha_istanbul" ]);
 
   // run default
   grunt.registerTask( strings.DEFAULT, [ strings.ALL ]);
 
   // run deploy
-  grunt.registerTask( strings.DEPLOY,  [ strings.TEST, strings.BUILD, "copy:deploy" ]);
+  grunt.registerTask( strings.DEPLOY,  [ strings.TEST, strings.BUILD, `${ strings.COPY }:deploy` ]);
 
   // run dist
   grunt.registerTask( strings.DIST,    [ strings.TEST, strings.BUILD, "move:distribute" ]);
 
   // run test
-  grunt.registerTask( strings.TEST,    [ strings.ESLINT, strings.CLEAN, "mkdir", "copy:test",
-                                         "mocha_istanbul" ]);
+  grunt.registerTask( strings.TEST,    [ strings.ESLINT, strings.CLEAN, strings.MKDIR,
+                                         `${ strings.COPY }:test`, "mocha_istanbul" ]);
 };

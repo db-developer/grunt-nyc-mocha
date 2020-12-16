@@ -51,7 +51,7 @@
     "grunt-contrib-clean": "^2.0.0",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-eslint": "^23.0.0",
-    "grunt-jsonfile": "^0.2.1",
+    "grunt-jsonfile": "^0.2.2",
     "grunt-mkdir": "^1.1.0",
     "grunt-mocha": "^1.2.0",
     "grunt-mocha-istanbul": "^5.0.2",
@@ -63,6 +63,6 @@
     "load-grunt-config": "^3.0.1",
     "load-grunt-tasks": "^5.1.0",
     "rollup-plugin-terser": "^7.0.2",
-    "webpack": "^5.10.0"
+    "webpack": "^5.10.3"
   }
 }

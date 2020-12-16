@@ -26,5 +26,7 @@ module.exports = {
   SCRIPTS:  "scripts",
   SRC:      "src",
   TASKS:    "tasks",
-  TEST:     "test"
+  TEMPLATE: "template",
+  TEST:     "test",
+  TMP:      "tmp"
 }

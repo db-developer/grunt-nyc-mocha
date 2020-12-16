@@ -23,8 +23,9 @@
     "gruntplugin",
     "nyc",
     "mocha",
+    "test",
     "coverage",
-    "test"
+    "coveralls"
   ],
   "files": [
     "docs",

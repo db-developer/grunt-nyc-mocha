@@ -6,6 +6,7 @@
 module.exports = {
   ALL:      "all",
   ANY:      "any",
+  API:      "api",
   BUILD:    "build",
   BUILDWP:  "webpack_build",
   BUILDRO:  "rollup_build",
@@ -20,6 +21,8 @@ module.exports = {
   DOT:      ".",
   ESLINT:   "eslint",
   GRUNT:    "grunt",
+  JSDOC:    "jsdoc",
+  JSDOC2MD: "jsdoc2md",
   JSONFILE: "jsonfile",
   LIB:      "lib",
   MKDIR:    "mkdir",

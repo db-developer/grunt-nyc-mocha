@@ -8,6 +8,7 @@ const path          = require( "path"            );
 const strings       = require( "./.conf/strings" );
 
 const env = {
+  APIDIR:       path.join( `${ strings.DOCS }`, `${ strings.API }.md`  ),
   BUILDDIR:     `${ strings.BUILD }`,
   CONFDIR:      `${ strings.DOT   }${ strings.CONF }`,
   COVERAGEDIR:  path.join( `${ strings.DIST  }`, `${ strings.COVERAGE }` ),
@@ -31,8 +32,8 @@ module.exports = function( grunt ) {
   require( "load-grunt-tasks"  )( grunt );
 
   // run lint and all tests by default before packaging
-  grunt.registerTask( strings.ALL,     [ strings.TEST, strings.BUILD, `${ strings.COPY }:deploy`,
-                                         "move:distribute" ]);
+  grunt.registerTask( strings.ALL,     [ strings.TEST, strings.DOCS, strings.BUILD,
+                                         `${ strings.COPY }:deploy`, "move:distribute" ]);
 
   // run lint and all tests by default before packaging
   grunt.registerTask( strings.BUILD,   [ strings.BUILDRO ]);
@@ -53,10 +54,15 @@ module.exports = function( grunt ) {
   grunt.registerTask( strings.DEFAULT, [ strings.ALL ]);
 
   // run deploy
-  grunt.registerTask( strings.DEPLOY,  [ strings.TEST, strings.BUILD, `${ strings.COPY }:deploy` ]);
+  grunt.registerTask( strings.DEPLOY,  [ strings.TEST, strings.BUILD, strings.DOCS,
+                                         `${ strings.COPY }:deploy` ]);
 
   // run dist
-  grunt.registerTask( strings.DIST,    [ strings.TEST, strings.BUILD, "move:distribute" ]);
+  grunt.registerTask( strings.DIST,    [ strings.TEST, strings.BUILD, strings.DOCS,
+                                         "move:distribute" ]);
+
+  // run docs
+  grunt.registerTask( strings.DOCS,    [ strings.ESLINT, strings.JSDOC, strings.JSDOC2MD ]);
 
   // run test
   grunt.registerTask( strings.TEST,    [ strings.ESLINT, strings.CLEAN, strings.MKDIR,

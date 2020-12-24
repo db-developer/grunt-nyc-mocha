@@ -31,9 +31,9 @@
 		<ul class="nav navbar-nav">
 			
 			<li class="dropdown">
-				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
+				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="global.html#executeNYCMocha">executeNYCMocha</a></li><li><a href="global.html#getMochaPath">getMochaPath</a></li><li><a href="global.html#getNYCPath">getNYCPath</a></li><li><a href="global.html#getOptions">getOptions</a></li><li><a href="global.html#getTaskOptions">getTaskOptions</a></li><li><a href="global.html#isArray">isArray</a></li><li><a href="global.html#registerMultiTaskNYCMocha">registerMultiTaskNYCMocha</a></li><li><a href="global.html#runTaskNYCMocha">runTaskNYCMocha</a></li><li><a href="global.html#toArgs">toArgs</a></li><li><a href="global.html#toArgsImpl">toArgsImpl</a></li><li><a href="global.html#toNYCMochaArgs">toNYCMochaArgs</a></li>
+					<li><a href="module-grunt-nyc-mocha.html">grunt-nyc-mocha</a></li><li><a href="module-grunt-nyc-mocha_constants.html">grunt-nyc-mocha/constants</a></li><li><a href="module-grunt-nyc-mocha_lib.html">grunt-nyc-mocha/lib</a></li><li><a href="module-grunt-nyc-mocha_options.html">grunt-nyc-mocha/options</a></li><li><a href="module-grunt-nyc-mocha_options_nycmocha.html">grunt-nyc-mocha/options/nycmocha</a></li><li><a href="module-grunt-nyc-mocha_tasks_nycmocha.html">grunt-nyc-mocha/tasks/nycmocha</a></li>
 				</ul>
 			</li>
 			
@@ -70,8 +70,13 @@
 <section>
     <article>
         <pre
-            class="sunlight-highlight-javascript linenums">/*
- *	lib.js: grunt-mocha-nyc
+            class="sunlight-highlight-javascript linenums">/**
+ *	lib.js: grunt-nyc-mocha
+ *
+ *  @module grunt-nyc-mocha/lib
+ *
+ *//*
+ *	lib.js: grunt-nyc-mocha
  *
  *  © 2020, slashlib.org.
  *
@@ -81,6 +86,10 @@
  *//* eslint-disable-next-line */
 "use strict";
 
+/**
+ *  Stringtable
+ *  @ignore
+ */
 const _STRINGS = {
   ERROR_PEER_DEPENDENCY_MOCHA:  "Mocha peer dependency missing.  Please \"npm install mocha\"",
   ERROR_PEER_DEPENDENCY_NYC:    "NYC peer dependency missing.  Please \"npm install nyc\"",

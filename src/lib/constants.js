@@ -1,9 +1,21 @@
+
 /**
+ *	constants.js: grunt-nyc-mocha
+ *
+ *  @module grunt-nyc-mocha/constants
+ *
+ *//*
  *  © 2020, db-developer.
- *  Licensed under the MIT license.
+ *
+ *  constants.js  is distributed  WITHOUT  ANY WARRANTY;  without  even  the
+ *  implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
 "use strict";
 
+/**
+ *  Stringtable
+ *  @ignore
+ */
 const _STRINGS = {
   PROPERTY_TASKNAME_NYCMOCHA:   "TASKNAME_NYCMOCHA",
   PROPERTY_TASKDESC_NYCMOCHA:   "TASKDESCRIPTION_NYCMOCHA",

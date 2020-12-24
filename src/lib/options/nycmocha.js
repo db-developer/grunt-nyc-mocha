@@ -1,6 +1,9 @@
-/*
+/**
  *	options/nycmocha.js: grunt-nyc-mocha
  *
+ *  @module grunt-nyc-mocha/options/nycmocha
+ *
+ *//*
  *  © 2020, slashlib.org.
  *
  *  options/nycmocha.js  is distributed WITHOUT ANY WARRANTY; without even the
@@ -9,11 +12,19 @@
  *//* eslint-disable-next-line */
 "use strict";
 
+/**
+ *  Module initializer
+ *  @ignore
+ */
 const _m = {
   path:     require( "path"   ),
   lib:      require( "../lib" )
 };
 
+/**
+ *  Stringtable
+ *  @ignore
+ */
 const _STRINGS = {
   ERROR_MSG_MISSING_GRUNT:        "nycmocha.js - Function 'toArgsImpl': missing parameter 'grunt'.",
   ERROR_MSG_MISSING_OPTIONS:      "nycmocha.js - Function 'toArgsImpl': missing parameter 'options'.",
@@ -61,6 +72,11 @@ const _STRINGS = {
   TRUE:                           `${ true }`
 };
 
+/**
+ *  Returns default options for nyc coverage.
+ *
+ *  @return {object} default options for nyc coverage.
+ */
 function getNYCCoverageOptions() {
   return {
     branches:     false,              // what % of branches must be covered?
@@ -74,6 +90,11 @@ function getNYCCoverageOptions() {
   };
 }
 
+/**
+ *  Returns default options for nyc sourcemap.
+ *
+ *  @return {object} default options for nyc sourcemap.
+ */
 function getNYCSourcemapOptions() {
   return {
     create:       undefined,          // should nyc produce sourcemaps?
@@ -81,6 +102,11 @@ function getNYCSourcemapOptions() {
   };
 }
 
+/**
+ *  Returns default settings for basic nyc options.
+ *
+ *  @return {object} default settings for basic nyc options.
+ */
 function getNYCOptions() {
   return {
     all:            false,
@@ -95,6 +121,11 @@ function getNYCOptions() {
   };
 }
 
+/**
+ *  Returns default settings for basic mocha options.
+ *
+ *  @return {object} default settings for basic mocha options.
+ */
 function getMochaOptions() {
   return {
     bail:           undefined,           // abort ("bail") after first test failure
@@ -108,6 +139,11 @@ function getMochaOptions() {
   };
 }
 
+/**
+ *  Returns default settings for basic node options.
+ *
+ *  @return {object} default settings for basic node options.
+ */
 function getNodeOptions() {
   return {
     options:        false,

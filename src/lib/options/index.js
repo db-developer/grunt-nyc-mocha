@@ -1,6 +1,10 @@
-/*
- *	options/index.js: grunt-nyc-mocha
+
+/**
+ *	index.js: grunt-nyc-mocha/options
  *
+ *  @module grunt-nyc-mocha/options
+ *
+ *//*
  *  © 2020, slashlib.org.
  *
  *  options/index.js  is distributed WITHOUT ANY WARRANTY;  without even the
@@ -9,10 +13,18 @@
  *//* eslint-disable-next-line */
 "use strict";
 
+/**
+ *  Module initializer
+ *  @ignore
+ */
 const _m = {
   nycmocha:     require( "./nycmocha" )
 };
 
+/**
+ *  Stringtable
+ *  @ignore
+ */
 const _STRINGS = {
   TONYCMOCHAARGS:   "toNYCMochaArgs"
 };

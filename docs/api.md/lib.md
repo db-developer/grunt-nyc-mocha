@@ -1,47 +1,45 @@
-## Functions
 
-<dl>
-<dt><a href="#getMochaPath">getMochaPath(grunt)</a> ⇒ <code>string</code></dt>
-<dd><p>Returns the path to the mocha executable/startscript</p>
-</dd>
-<dt><a href="#getNYCPath">getNYCPath(grunt)</a> ⇒ <code>string</code></dt>
-<dd><p>Returns the path to the nyc executable/startscript</p>
-</dd>
-<dt><a href="#isArray">isArray(grunt, options, name, callback)</a></dt>
-<dd><p>Checks if options is of type array and passes it to callback.</p>
-</dd>
-</dl>
+<br><a name="module_grunt-nyc-mocha/lib"></a>
 
-<a name="getMochaPath"></a>
+## grunt-nyc-mocha/lib
+> lib.js: grunt-nyc-mocha
 
-## getMochaPath(grunt) ⇒ <code>string</code>
-Returns the path to the mocha executable/startscript
 
-**Kind**: global function  
+* [grunt-nyc-mocha/lib](#module_grunt-nyc-mocha/lib)
+    * [~getMochaPath(grunt)](#module_grunt-nyc-mocha/lib..getMochaPath) ⇒ <code>string</code>
+    * [~getNYCPath(grunt)](#module_grunt-nyc-mocha/lib..getNYCPath) ⇒ <code>string</code>
+    * [~isArray(grunt, options, name, callback)](#module_grunt-nyc-mocha/lib..isArray)
+
+
+<br><a name="module_grunt-nyc-mocha/lib..getMochaPath"></a>
+
+### grunt-nyc-mocha/lib~getMochaPath(grunt) ⇒ <code>string</code>
+> Returns the path to the mocha executable/startscript
+
 **Returns**: <code>string</code> - path to mocha  
 
 | Param | Type |
 | --- | --- |
 | grunt | <code>grunt</code> | 
 
-<a name="getNYCPath"></a>
 
-## getNYCPath(grunt) ⇒ <code>string</code>
-Returns the path to the nyc executable/startscript
+<br><a name="module_grunt-nyc-mocha/lib..getNYCPath"></a>
 
-**Kind**: global function  
+### grunt-nyc-mocha/lib~getNYCPath(grunt) ⇒ <code>string</code>
+> Returns the path to the nyc executable/startscript
+
 **Returns**: <code>string</code> - path to nyc  
 
 | Param | Type |
 | --- | --- |
 | grunt | <code>grunt</code> | 
 
-<a name="isArray"></a>
 
-## isArray(grunt, options, name, callback)
-Checks if options is of type array and passes it to callback.
+<br><a name="module_grunt-nyc-mocha/lib..isArray"></a>
 
-**Kind**: global function  
+### grunt-nyc-mocha/lib~isArray(grunt, options, name, callback)
+> Checks if options is of type array and passes it to callback.
+
 
 | Param | Type |
 | --- | --- |

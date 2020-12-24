@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>grunt-nyc-mocha Source: options/index.js</title>
+	<title>grunt-nyc-mocha Source: constants.js</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -65,59 +65,43 @@
 		<div id="main">
 			
 
-		<h1 class="page-title">Source: options/index.js</h1>
+		<h1 class="page-title">Source: constants.js</h1>
     
 <section>
     <article>
         <pre
             class="sunlight-highlight-javascript linenums">
 /**
- *	index.js: grunt-nyc-mocha/options
+ *	constants.js: grunt-nyc-mocha
  *
- *  @module grunt-nyc-mocha/options
+ *  @module grunt-nyc-mocha/constants
  *
  *//*
- *  © 2020, slashlib.org.
+ *  © 2020, db-developer.
  *
- *  options/index.js  is distributed WITHOUT ANY WARRANTY;  without even the
+ *  constants.js  is distributed  WITHOUT  ANY WARRANTY;  without  even  the
  *  implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
- *
- *//* eslint-disable-next-line */
-"use strict";
-
-/**
- *  Module initializer
- *  @ignore
  */
-const _m = {
-  nycmocha:     require( "./nycmocha" )
-};
+"use strict";
 
 /**
  *  Stringtable
  *  @ignore
  */
 const _STRINGS = {
-  TONYCMOCHAARGS:   "toNYCMochaArgs"
+  PROPERTY_TASKNAME_NYCMOCHA:   "TASKNAME_NYCMOCHA",
+  PROPERTY_TASKDESC_NYCMOCHA:   "TASKDESCRIPTION_NYCMOCHA",
+  TASKNAME_NYCMOCHA:            "nyc_mocha",
+  TASKDESCRIPTION_NYCMOCHA:     "Generate coverage reports with nyc from mocha testruns"
 };
-
-/**
- *  Returns an object wich holds an array of arguments, which will be used to
- *  run the 'nyc_mocha' task and the array of options the arguments were created
- *  from.
- *
- *  @return {Promise&lt;Object>} obj
- *  @return {Array&lt;strings>}  obj.args  an array of arguments
- *  @return {Array&lt;any>}      obj.opts  an array of options
- */
-function toNYCMochaArgs( grunt, task ) {
-  return _m.nycmocha.toArgs( grunt, task );
-}
 
 /* eslint-disable */
 // Module exports:
-Object.defineProperty( module.exports, _STRINGS.TONYCMOCHAARGS, {
-       value:    toNYCMochaArgs,
+Object.defineProperty( module.exports, _STRINGS.PROPERTY_TASKNAME_NYCMOCHA, {
+       value:    _STRINGS.TASKNAME_NYCMOCHA,
+       writable: false, enumerable: true, configurable: false });
+Object.defineProperty( module.exports, _STRINGS.PROPERTY_TASKDESC_NYCMOCHA, {
+       value:    _STRINGS.TASKDESCRIPTION_NYCMOCHA,
        writable: false, enumerable: true, configurable: false });
 /* eslint-enable */
 </pre>

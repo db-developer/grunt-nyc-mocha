@@ -1,5 +1,10 @@
-/*
- *	lib.js: grunt-mocha-nyc
+/**
+ *	lib.js: grunt-nyc-mocha
+ *
+ *  @module grunt-nyc-mocha/lib
+ *
+ *//*
+ *	lib.js: grunt-nyc-mocha
  *
  *  © 2020, slashlib.org.
  *
@@ -9,6 +14,10 @@
  *//* eslint-disable-next-line */
 "use strict";
 
+/**
+ *  Stringtable
+ *  @ignore
+ */
 const _STRINGS = {
   ERROR_PEER_DEPENDENCY_MOCHA:  "Mocha peer dependency missing.  Please \"npm install mocha\"",
   ERROR_PEER_DEPENDENCY_NYC:    "NYC peer dependency missing.  Please \"npm install nyc\"",

@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>grunt-nyc-mocha Source: options/index.js</title>
+	<title>grunt-nyc-mocha Source: tasks/index.js</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -65,21 +65,21 @@
 		<div id="main">
 			
 
-		<h1 class="page-title">Source: options/index.js</h1>
+		<h1 class="page-title">Source: tasks/index.js</h1>
     
 <section>
     <article>
         <pre
             class="sunlight-highlight-javascript linenums">
 /**
- *	index.js: grunt-nyc-mocha/options
+ *	index.js: grunt-nyc-mocha
  *
- *  @module grunt-nyc-mocha/options
+ *  @module grunt-nyc-mocha
  *
  *//*
  *  © 2020, slashlib.org.
  *
- *  options/index.js  is distributed WITHOUT ANY WARRANTY;  without even the
+ *  tasks/index.js  is  distributed  WITHOUT ANY WARRANTY;  without even the
  *  implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  *
  *//* eslint-disable-next-line */
@@ -90,7 +90,7 @@
  *  @ignore
  */
 const _m = {
-  nycmocha:     require( "./nycmocha" )
+  nycmocha:         require( "./nycmocha" )
 };
 
 /**
@@ -98,26 +98,13 @@ const _m = {
  *  @ignore
  */
 const _STRINGS = {
-  TONYCMOCHAARGS:   "toNYCMochaArgs"
+  RUNTASKNYCMOCHA:  "runTaskNYCMocha"
 };
-
-/**
- *  Returns an object wich holds an array of arguments, which will be used to
- *  run the 'nyc_mocha' task and the array of options the arguments were created
- *  from.
- *
- *  @return {Promise&lt;Object>} obj
- *  @return {Array&lt;strings>}  obj.args  an array of arguments
- *  @return {Array&lt;any>}      obj.opts  an array of options
- */
-function toNYCMochaArgs( grunt, task ) {
-  return _m.nycmocha.toArgs( grunt, task );
-}
 
 /* eslint-disable */
 // Module exports:
-Object.defineProperty( module.exports, _STRINGS.TONYCMOCHAARGS, {
-       value:    toNYCMochaArgs,
+Object.defineProperty( module.exports, _STRINGS.RUNTASKNYCMOCHA,  {
+       value:    _m.nycmocha.runTaskNYCMocha,
        writable: false, enumerable: true, configurable: false });
 /* eslint-enable */
 </pre>

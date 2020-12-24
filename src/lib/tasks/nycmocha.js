@@ -1,6 +1,9 @@
-/*
+/**
  *	tasks/nycmocha.js: grunt-nyc-mocha
  *
+ *  @module grunt-nyc-mocha/tasks/nycmocha
+ *
+ *//*
  *  © 2020, slashlib.org.
  *
  *  tasks/nycmocha.js  is distributed WITHOUT ANY WARRANTY; without even the
@@ -9,8 +12,18 @@
  *//* eslint-disable-next-line */
 "use strict";
 
-const _m = { nycmochaopts: require( "../options/nycmocha" ) };
+/**
+ *  Module initializer
+ *  @ignore
+ */
+const _m = {
+  nycmochaopts: require( "../options/nycmocha" )
+};
 
+/**
+ *  Stringtable initializer
+ *  @ignore
+ */
 function _init_STRINGS() {
   const executenycmocha = "executeNYCMocha";
   const missingproperty = "Missing property";
@@ -27,6 +40,10 @@ function _init_STRINGS() {
   };
 }
 
+/**
+ *  Stringtable
+ *  @ignore
+ */
 const _STRINGS = _init_STRINGS();
 
 /**
@@ -91,6 +108,8 @@ function executeNYCMocha( grunt, task, obj ) {
 }
 
 /**
+ *  Run the nyc mocha task.
+ *
  *  @return {Promise} ... required by callee to terminate async call (on "then")
  */
 function runTaskNYCMocha( grunt, task ) {

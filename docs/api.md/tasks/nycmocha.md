@@ -1,20 +1,20 @@
-## Functions
 
-<dl>
-<dt><a href="#executeNYCMocha">executeNYCMocha(grunt, task, obj)</a></dt>
-<dd><p>Return a promise for executing
-   &#39;node --[node opts] nyc --[nyc opts] mocha --[mocha opts]&#39;</p>
-</dd>
-<dt><a href="#runTaskNYCMocha">runTaskNYCMocha()</a> ⇒ <code>Promise</code></dt>
-<dd></dd>
-</dl>
+<br><a name="module_grunt-nyc-mocha/tasks/nycmocha"></a>
 
-<a name="executeNYCMocha"></a>
+## grunt-nyc-mocha/tasks/nycmocha
+> tasks/nycmocha.js: grunt-nyc-mocha
 
-## executeNYCMocha(grunt, task, obj)
-Return a promise for executing   'node --[node opts] nyc --[nyc opts] mocha --[mocha opts]'
 
-**Kind**: global function  
+* [grunt-nyc-mocha/tasks/nycmocha](#module_grunt-nyc-mocha/tasks/nycmocha)
+    * [~executeNYCMocha(grunt, task, obj)](#module_grunt-nyc-mocha/tasks/nycmocha..executeNYCMocha)
+    * [~runTaskNYCMocha()](#module_grunt-nyc-mocha/tasks/nycmocha..runTaskNYCMocha) ⇒ <code>Promise</code>
+
+
+<br><a name="module_grunt-nyc-mocha/tasks/nycmocha..executeNYCMocha"></a>
+
+### grunt-nyc-mocha/tasks/nycmocha~executeNYCMocha(grunt, task, obj)
+> Return a promise for executing>    'node --[node opts] nyc --[nyc opts] mocha --[mocha opts]'
+
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -22,8 +22,10 @@ Return a promise for executing   'node --[node opts] nyc --[nyc opts] mocha --[
 | task | <code>grunt.task</code> | the current task |
 | obj | <code>Object</code> | wrapper for options and arguments. |
 
-<a name="runTaskNYCMocha"></a>
 
-## runTaskNYCMocha() ⇒ <code>Promise</code>
-**Kind**: global function  
+<br><a name="module_grunt-nyc-mocha/tasks/nycmocha..runTaskNYCMocha"></a>
+
+### grunt-nyc-mocha/tasks/nycmocha~runTaskNYCMocha() ⇒ <code>Promise</code>
+> Run the nyc mocha task.
+
 **Returns**: <code>Promise</code> - ... required by callee to terminate async call (on "then")  

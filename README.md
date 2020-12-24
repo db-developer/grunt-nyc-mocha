@@ -19,6 +19,7 @@ grunt task for running tests and coverage, based on nyc and mocha.
   * [Code coverage of tests for grunt-nyc-mocha](docs/grunt.md#code-coverage)
   * [Build grunt-nyc-mocha from scratch](docs/grunt.md#building)
   * [Frameworks used for building and running grunt-nyc-mocha](docs/frameworks.md)
+  * [API of package grunt-nyc-mocha](docs/api.index.md)
 
 ## getting started ##
 

@@ -1,6 +1,10 @@
-/*
- *	tasks/index.js: grunt-nyc-mocha
+
+/**
+ *	index.js: grunt-nyc-mocha
  *
+ *  @module grunt-nyc-mocha
+ *
+ *//*
  *  © 2020, slashlib.org.
  *
  *  tasks/index.js  is  distributed  WITHOUT ANY WARRANTY;  without even the
@@ -9,10 +13,18 @@
  *//* eslint-disable-next-line */
 "use strict";
 
+/**
+ *  Module initializer
+ *  @ignore
+ */
 const _m = {
   nycmocha:         require( "./nycmocha" )
 };
 
+/**
+ *  Stringtable
+ *  @ignore
+ */
 const _STRINGS = {
   RUNTASKNYCMOCHA:  "runTaskNYCMocha"
 };

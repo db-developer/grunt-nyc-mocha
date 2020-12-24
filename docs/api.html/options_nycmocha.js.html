@@ -31,9 +31,9 @@
 		<ul class="nav navbar-nav">
 			
 			<li class="dropdown">
-				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
+				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="global.html#executeNYCMocha">executeNYCMocha</a></li><li><a href="global.html#getMochaPath">getMochaPath</a></li><li><a href="global.html#getNYCPath">getNYCPath</a></li><li><a href="global.html#getOptions">getOptions</a></li><li><a href="global.html#getTaskOptions">getTaskOptions</a></li><li><a href="global.html#isArray">isArray</a></li><li><a href="global.html#registerMultiTaskNYCMocha">registerMultiTaskNYCMocha</a></li><li><a href="global.html#runTaskNYCMocha">runTaskNYCMocha</a></li><li><a href="global.html#toArgs">toArgs</a></li><li><a href="global.html#toArgsImpl">toArgsImpl</a></li><li><a href="global.html#toNYCMochaArgs">toNYCMochaArgs</a></li>
+					<li><a href="module-grunt-nyc-mocha.html">grunt-nyc-mocha</a></li><li><a href="module-grunt-nyc-mocha_constants.html">grunt-nyc-mocha/constants</a></li><li><a href="module-grunt-nyc-mocha_lib.html">grunt-nyc-mocha/lib</a></li><li><a href="module-grunt-nyc-mocha_options.html">grunt-nyc-mocha/options</a></li><li><a href="module-grunt-nyc-mocha_options_nycmocha.html">grunt-nyc-mocha/options/nycmocha</a></li><li><a href="module-grunt-nyc-mocha_tasks_nycmocha.html">grunt-nyc-mocha/tasks/nycmocha</a></li>
 				</ul>
 			</li>
 			
@@ -70,9 +70,12 @@
 <section>
     <article>
         <pre
-            class="sunlight-highlight-javascript linenums">/*
+            class="sunlight-highlight-javascript linenums">/**
  *	options/nycmocha.js: grunt-nyc-mocha
  *
+ *  @module grunt-nyc-mocha/options/nycmocha
+ *
+ *//*
  *  © 2020, slashlib.org.
  *
  *  options/nycmocha.js  is distributed WITHOUT ANY WARRANTY; without even the
@@ -81,11 +84,19 @@
  *//* eslint-disable-next-line */
 "use strict";
 
+/**
+ *  Module initializer
+ *  @ignore
+ */
 const _m = {
   path:     require( "path"   ),
   lib:      require( "../lib" )
 };
 
+/**
+ *  Stringtable
+ *  @ignore
+ */
 const _STRINGS = {
   ERROR_MSG_MISSING_GRUNT:        "nycmocha.js - Function 'toArgsImpl': missing parameter 'grunt'.",
   ERROR_MSG_MISSING_OPTIONS:      "nycmocha.js - Function 'toArgsImpl': missing parameter 'options'.",
@@ -133,6 +144,11 @@ const _STRINGS = {
   TRUE:                           `${ true }`
 };
 
+/**
+ *  Returns default options for nyc coverage.
+ *
+ *  @return {object} default options for nyc coverage.
+ */
 function getNYCCoverageOptions() {
   return {
     branches:     false,              // what % of branches must be covered?
@@ -146,6 +162,11 @@ function getNYCCoverageOptions() {
   };
 }
 
+/**
+ *  Returns default options for nyc sourcemap.
+ *
+ *  @return {object} default options for nyc sourcemap.
+ */
 function getNYCSourcemapOptions() {
   return {
     create:       undefined,          // should nyc produce sourcemaps?
@@ -153,6 +174,11 @@ function getNYCSourcemapOptions() {
   };
 }
 
+/**
+ *  Returns default settings for basic nyc options.
+ *
+ *  @return {object} default settings for basic nyc options.
+ */
 function getNYCOptions() {
   return {
     all:            false,
@@ -167,6 +193,11 @@ function getNYCOptions() {
   };
 }
 
+/**
+ *  Returns default settings for basic mocha options.
+ *
+ *  @return {object} default settings for basic mocha options.
+ */
 function getMochaOptions() {
   return {
     bail:           undefined,           // abort ("bail") after first test failure
@@ -180,6 +211,11 @@ function getMochaOptions() {
   };
 }
 
+/**
+ *  Returns default settings for basic node options.
+ *
+ *  @return {object} default settings for basic node options.
+ */
 function getNodeOptions() {
   return {
     options:        false,

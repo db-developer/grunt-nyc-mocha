@@ -132,9 +132,8 @@ function registerMultiTaskNYCMocha( grunt ) {
     /* istanbul ignore next */ function () {
       const task = this;
       const done = task.async();
-      _m.tasks.runTaskNYCMocha( grunt, task )
-              .then((       ) => { done(); },
-                    ( error ) => { grunt.log.error( error ); done( false ); });
+      runTaskNYCMocha( grunt, task ).then((       ) => { done(); },
+                                          ( error ) => { grunt.log.error( error ); done( false ); });
   });
 }
 

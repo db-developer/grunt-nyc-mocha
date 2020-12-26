@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>grunt-nyc-mocha Module: grunt-nyc-mocha/options</title>
+	<title>grunt-nyc-mocha Module: grunt-nyc-mocha/tasks</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -65,7 +65,7 @@
 		<div id="main">
 			
 
-	<h1 class="page-title">Module: grunt-nyc-mocha/options</h1>
+	<h1 class="page-title">Module: grunt-nyc-mocha/tasks</h1>
 <section>
 
 <header>
@@ -77,7 +77,7 @@
     <div class="container-overview">
     
         
-            <div class="description"><p>index.js: grunt-nyc-mocha/options</p></div>
+            <div class="description"><p>index.js: grunt-nyc-mocha/tasks</p></div>
         
 
         
@@ -115,8 +115,8 @@
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
-				<a href="options_index.js.html">options/index.js</a>,
-				 <a href="options_index.js.html#sunlight-1-line-2">line 2</a>
+				<a href="tasks_index.js.html">tasks/index.js</a>,
+				 <a href="tasks_index.js.html#sunlight-1-line-2">line 2</a>
 			</li>
 		</ul>
 	</dd>
@@ -153,7 +153,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id="~toNYCMochaArgs"><span class="type-signature">&lt;inner> </span>toNYCMochaArgs()</h4>
+    <h4 class="name" id=".registerMultiTaskNYCMocha"><span class="type-signature">&lt;static> </span>registerMultiTaskNYCMocha(grunt)</h4>
     
     
 </dt>
@@ -161,9 +161,7 @@
 
     
     <div class="description">
-        <p>Returns an object wich holds an array of arguments, which will be used to<br>
-run the 'nyc_mocha' task and the array of options the arguments were created<br>
-from.</p>
+        <p>Register a multitask for nyc_mocha.</p>
     </div>
     
 
@@ -172,6 +170,56 @@ from.</p>
     
 
     
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>grunt</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">grunt</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
     
 
     
@@ -209,8 +257,8 @@ from.</p>
 	<dd class="tag-source">
 		<ul class="dummy">
 			<li>
-				<a href="options_index.js.html">options/index.js</a>,
-				 <a href="options_index.js.html#sunlight-1-line-41">line 41</a>
+				<a href="tasks_index.js.html">tasks/index.js</a>,
+				 <a href="tasks_index.js.html#sunlight-1-line-35">line 35</a>
 			</li>
 		</ul>
 	</dd>
@@ -219,6 +267,14 @@ from.</p>
 	
 
 	
+	<dt class="tag-see method-doc-label method-doc-details-label">See:</dt>
+	<dd class="tag-see">
+		<ul>
+			<li><p>Function registerMultiTaskNYCMocha<br>
+published by module nycmocha for a detailed function description.</p></li>
+			</ul>
+	</dd>
+	
 
 	
 </dl>
@@ -235,74 +291,6 @@ from.</p>
     
 
     
-    <h5>Returns:</h5>
-    <ul>
-            <li>
-<div class="param-desc">
-    <p>obj</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Promise.&lt;Object></span>
-
-
-
-    </dd>
-</dl>
-
-</li>
-        
-            <li>
-<div class="param-desc">
-    <p>obj.args  an array of arguments</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Array.&lt;strings></span>
-
-
-
-    </dd>
-</dl>
-
-</li>
-        
-            <li>
-<div class="param-desc">
-    <p>obj.opts  an array of options</p>
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Array.&lt;any></span>
-
-
-
-    </dd>
-</dl>
-
-</li>
-        </ul>
 
     
 </dd>

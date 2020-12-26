@@ -33,7 +33,7 @@
 			<li class="dropdown">
 				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="module-grunt-nyc-mocha.html">grunt-nyc-mocha</a></li><li><a href="module-grunt-nyc-mocha_constants.html">grunt-nyc-mocha/constants</a></li><li><a href="module-grunt-nyc-mocha_lib.html">grunt-nyc-mocha/lib</a></li><li><a href="module-grunt-nyc-mocha_options.html">grunt-nyc-mocha/options</a></li><li><a href="module-grunt-nyc-mocha_options_nycmocha.html">grunt-nyc-mocha/options/nycmocha</a></li><li><a href="module-grunt-nyc-mocha_tasks_nycmocha.html">grunt-nyc-mocha/tasks/nycmocha</a></li>
+					<li><a href="module-grunt-nyc-mocha.html">grunt-nyc-mocha</a></li><li><a href="module-grunt-nyc-mocha_constants.html">grunt-nyc-mocha/constants</a></li><li><a href="module-grunt-nyc-mocha_lib.html">grunt-nyc-mocha/lib</a></li><li><a href="module-grunt-nyc-mocha_options.html">grunt-nyc-mocha/options</a></li><li><a href="module-grunt-nyc-mocha_options_nycmocha.html">grunt-nyc-mocha/options/nycmocha</a></li><li><a href="module-grunt-nyc-mocha_tasks.html">grunt-nyc-mocha/tasks</a></li><li><a href="module-grunt-nyc-mocha_tasks_nycmocha.html">grunt-nyc-mocha/tasks/nycmocha</a></li>
 				</ul>
 			</li>
 			
@@ -89,6 +89,7 @@
  *  @ignore
  */
 const _m = {
+  const:        require( "../constants" ),
   nycmochaopts: require( "../options/nycmocha" )
 };
 
@@ -108,6 +109,7 @@ function _init_STRINGS() {
     EXECUTENYCMOCHA:            `${ executenycmocha }`,
     IGNORE:                     "ignore",
     INHERIT:                    "inherit",
+    REGISTERMULTITASKNYCMOCHA:  "registerMultiTaskNYCMocha",
     RUNTASKNYCMOCHA:            "runTaskNYCMocha"
   };
 }
@@ -192,10 +194,29 @@ function runTaskNYCMocha( grunt, task ) {
   return promise;
 }
 
+/**
+ *  Registers the 'nyc_mocha' multitask.
+ *
+ *  @param  {grunt} grunt
+ */
+function registerMultiTaskNYCMocha( grunt ) {
+  grunt.registerMultiTask( _m.const.TASKNAME_NYCMOCHA, _m.const.TASKDESCRIPTION_NYCMOCHA,
+    /* istanbul ignore next */ function () {
+      const task = this;
+      const done = task.async();
+      _m.tasks.runTaskNYCMocha( grunt, task )
+              .then((       ) => { done(); },
+                    ( error ) => { grunt.log.error( error ); done( false ); });
+  });
+}
+
 /* eslint-disable */
 // Module exports:
 Object.defineProperty( module.exports, _STRINGS.EXECUTENYCMOCHA,  {
        value:    executeNYCMocha,
+       writable: false, enumerable: true, configurable: false });
+Object.defineProperty( module.exports, _STRINGS.REGISTERMULTITASKNYCMOCHA, {
+       value:    registerMultiTaskNYCMocha,
        writable: false, enumerable: true, configurable: false });
 Object.defineProperty( module.exports, _STRINGS.RUNTASKNYCMOCHA,  {
        value:    runTaskNYCMocha,
@@ -238,7 +259,7 @@ Object.defineProperty( module.exports, _STRINGS.RUNTASKNYCMOCHA,  {
 
 <footer>
 
-	<center>api docs grunt-nyc-mocha version 0.0.6</center>
+	<center>api docs grunt-nyc-mocha version 0.0.7</center>
 
 
 	<span class="copyright">

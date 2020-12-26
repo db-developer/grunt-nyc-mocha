@@ -4,10 +4,10 @@
 const expect    = require( "expect.js"   );
 
 ( async function() {
-  const constants = require( "./0.0.constants" );
+  const constants = require( "./00.00.constants" );
   const env       = await constants.env;
 
-  describe( "1.0.options.nycmocha.spec.ts - Testing module 'lib/lib.js'", () => {
+  describe( "01.00.options.nycmocha.spec.ts - Testing module 'lib/lib.js'", () => {
     const lib     = require( "../../lib/lib" );
     const nycmoc  = require( "../../lib/options/nycmocha" );
 

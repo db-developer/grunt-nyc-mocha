@@ -7,8 +7,8 @@
  *//*
  *  © 2020, slashlib.org.
  *
- *  options/index.js  is distributed WITHOUT ANY WARRANTY;  without even the
- *  implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ *  index.js  is distributed WITHOUT ANY WARRANTY; without even the implied
+ *  warranty  of  MERCHANTABILITY  or  FITNESS  FOR  A PARTICULAR  PURPOSE.
  *
  *//* eslint-disable-next-line */
 "use strict";

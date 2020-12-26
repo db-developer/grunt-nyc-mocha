@@ -7,10 +7,10 @@
 const assert = require( "assert" );
 
 ( async function() {
-  const constants = require( "./0.0.constants" );
+  const constants = require( "./00.00.constants" );
   const env       = await constants.env;
 
-  describe( "0.1.initial.spec.ts", () => {
+  describe( "00.01.initial.spec.ts", () => {
     describe( "Testing for prerequisites.", () => {
       it( "Check for availability of assertion library 'expect.js'", () => {
           assert.doesNotThrow(() => {

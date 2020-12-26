@@ -17,6 +17,7 @@
  *  @ignore
  */
 const _m = {
+  const:        require( "../constants" ),
   nycmochaopts: require( "../options/nycmocha" )
 };
 
@@ -36,6 +37,7 @@ function _init_STRINGS() {
     EXECUTENYCMOCHA:            `${ executenycmocha }`,
     IGNORE:                     "ignore",
     INHERIT:                    "inherit",
+    REGISTERMULTITASKNYCMOCHA:  "registerMultiTaskNYCMocha",
     RUNTASKNYCMOCHA:            "runTaskNYCMocha"
   };
 }
@@ -120,10 +122,29 @@ function runTaskNYCMocha( grunt, task ) {
   return promise;
 }
 
+/**
+ *  Registers the 'nyc_mocha' multitask.
+ *
+ *  @param  {grunt} grunt
+ */
+function registerMultiTaskNYCMocha( grunt ) {
+  grunt.registerMultiTask( _m.const.TASKNAME_NYCMOCHA, _m.const.TASKDESCRIPTION_NYCMOCHA,
+    /* istanbul ignore next */ function () {
+      const task = this;
+      const done = task.async();
+      _m.tasks.runTaskNYCMocha( grunt, task )
+              .then((       ) => { done(); },
+                    ( error ) => { grunt.log.error( error ); done( false ); });
+  });
+}
+
 /* eslint-disable */
 // Module exports:
 Object.defineProperty( module.exports, _STRINGS.EXECUTENYCMOCHA,  {
        value:    executeNYCMocha,
+       writable: false, enumerable: true, configurable: false });
+Object.defineProperty( module.exports, _STRINGS.REGISTERMULTITASKNYCMOCHA, {
+       value:    registerMultiTaskNYCMocha,
        writable: false, enumerable: true, configurable: false });
 Object.defineProperty( module.exports, _STRINGS.RUNTASKNYCMOCHA,  {
        value:    runTaskNYCMocha,

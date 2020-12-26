@@ -4,14 +4,14 @@
 const expect    = require( "expect.js"   );
 
 ( async function() {
-  const constants = require( "./0.0.constants" );
+  const constants = require( "./00.00.constants" );
   const env       = await constants.env;
 
-  describe( "3.0.tasks.nycmocha.spec.ts - Testing module 'lib/tasks.js'", () => {
-    const tasks   = require( "../../lib/tasks/nycmocha" );
+  describe( "03.00.tasks.nycmocha.spec.ts - Testing module 'lib/task/nycmocha.js'", () => {
+    const tasks   = require( "../../lib/tasks/nycmocha"   );
     const nycmoc  = require( "../../lib/options/nycmocha" );
 
-    describe( "Testing exports of module 'lib'", () => {
+    describe( "Testing exports of module 'nycmocha'", () => {
       it( "Function 'executeNYCMocha' should exist", () => {
           expect( tasks.executeNYCMocha ).not.to.be( undefined  );
           expect( tasks.executeNYCMocha ).not.to.be( null       );
@@ -22,8 +22,13 @@ const expect    = require( "expect.js"   );
           expect( tasks.runTaskNYCMocha ).not.to.be( null       );
           expect( tasks.runTaskNYCMocha ).to.be.a(   "function" );
       });
+      it( "Function 'registerMultiTaskNYCMocha' should exist", () => {
+          expect( tasks.registerMultiTaskNYCMocha ).not.to.be( undefined  );
+          expect( tasks.registerMultiTaskNYCMocha ).not.to.be( null       );
+          expect( tasks.registerMultiTaskNYCMocha ).to.be.a(   "function" );
+      });
     });
-    describe( "Testing function 'executeNYCMocha' of module 'lib'", () => {
+    describe( "Testing function 'executeNYCMocha' of module 'nycmocha'", () => {
       it( "should be callable without parameters but get rejected", ( done ) => {
           const errmsg = "executeNYCMocha: Missing property 'obj.args'.";
           expect(() => { tasks.executeNYCMocha()
@@ -97,7 +102,7 @@ const expect    = require( "expect.js"   );
                        }).not.to.throwException();
       });
     });
-    describe( "Testing function 'runTaskNYCMocha' of module 'lib'", () => {
+    describe( "Testing function 'runTaskNYCMocha' of module 'nycmocha'", () => {
       it( "should be callable without parameters but get rejected", ( done ) => {
           const errmsg = "nycmocha.js - Function 'toArgs': missing parameter 'task'.";
           expect(() => { tasks.runTaskNYCMocha()
@@ -120,6 +125,19 @@ const expect    = require( "expect.js"   );
                                })
                               .catch(( error ) => { done( error ); });
                        }).not.to.throwException();
+      });
+    });
+    describe( "Testing function 'registerMultiTaskNYCMocha' of module 'nycmocha'", () => {
+      const errmsg  = "Cannot read property 'registerMultiTask' of undefined";
+      it( "should not be callable without parameters", () => {
+          expect(() => { tasks.registerMultiTaskNYCMocha(); }).to.throwException(( error ) => {
+            // console.log( error );
+            expect( error ).to.be.an( Error );
+            expect( error.message === errmsg ).to.be.ok();
+          });
+      });
+      it( "should be callable with parameter 'grunt' {grunt}", () => {
+          expect(() => { tasks.registerMultiTaskNYCMocha( env.grunt ); }).not.to.throwException();
       });
     });
   });

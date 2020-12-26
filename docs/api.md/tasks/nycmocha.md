@@ -8,6 +8,7 @@
 * [grunt-nyc-mocha/tasks/nycmocha](#module_grunt-nyc-mocha/tasks/nycmocha)
     * [~executeNYCMocha(grunt, task, obj)](#module_grunt-nyc-mocha/tasks/nycmocha..executeNYCMocha)
     * [~runTaskNYCMocha()](#module_grunt-nyc-mocha/tasks/nycmocha..runTaskNYCMocha) ⇒ <code>Promise</code>
+    * [~registerMultiTaskNYCMocha(grunt)](#module_grunt-nyc-mocha/tasks/nycmocha..registerMultiTaskNYCMocha)
 
 
 <br><a name="module_grunt-nyc-mocha/tasks/nycmocha..executeNYCMocha"></a>
@@ -29,3 +30,14 @@
 > Run the nyc mocha task.
 
 **Returns**: <code>Promise</code> - ... required by callee to terminate async call (on "then")  
+
+<br><a name="module_grunt-nyc-mocha/tasks/nycmocha..registerMultiTaskNYCMocha"></a>
+
+### grunt-nyc-mocha/tasks/nycmocha~registerMultiTaskNYCMocha(grunt)
+> Registers the 'nyc_mocha' multitask.
+
+
+| Param | Type |
+| --- | --- |
+| grunt | <code>grunt</code> | 
+

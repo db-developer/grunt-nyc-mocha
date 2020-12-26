@@ -4,10 +4,10 @@
 const expect = require( "expect.js" );
 
 ( async function() {
-  const constants = require( "./0.0.constants" );
+  const constants = require( "./00.00.constants" );
   const env       = await constants.env;
 
-  describe( "2.9.options.spec.ts - Testing module 'lib/options/index.js'", () => {
+  describe( "02.09.options.spec.ts - Testing module 'lib/options/index.js'", () => {
     const options = require( "../../lib/options" );
 
     describe( "Testing exports of module 'options'", () => {

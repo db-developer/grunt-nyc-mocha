@@ -2,9 +2,7 @@
 ## Modules
 
 * [grunt-nyc-mocha](api.md/index.md#module_grunt-nyc-mocha)
-    * [~registerMultiTaskNYCMocha(grunt)](api.md/index.md#module_grunt-nyc-mocha..registerMultiTaskNYCMocha)
-* [grunt-nyc-mocha](api.md/tasks/index.md#module_grunt-nyc-mocha)
-    * [~registerMultiTaskNYCMocha(grunt)](api.md/index.md#module_grunt-nyc-mocha..registerMultiTaskNYCMocha)
+    * [.registerMultiTaskNYCMocha(grunt)](api.md/index.md#module_grunt-nyc-mocha.registerMultiTaskNYCMocha)
 * [grunt-nyc-mocha/constants](api.md/constants.md#module_grunt-nyc-mocha/constants)
 * [grunt-nyc-mocha/lib](api.md/lib.md#module_grunt-nyc-mocha/lib)
     * [~getMochaPath(grunt)](api.md/lib.md#module_grunt-nyc-mocha/lib..getMochaPath) ⇒ <code>string</code>
@@ -22,6 +20,9 @@
     * [~getTaskOptions(task)](api.md/options/nycmocha.md#module_grunt-nyc-mocha/options/nycmocha..getTaskOptions) ⇒ <code>Object</code>
     * [~toArgsImpl(grunt, task)](api.md/options/nycmocha.md#module_grunt-nyc-mocha/options/nycmocha..toArgsImpl) ⇒ <code>Promise.&lt;Array.&lt;Object&gt;&gt;</code>
     * [~toArgs(grunt, task)](api.md/options/nycmocha.md#module_grunt-nyc-mocha/options/nycmocha..toArgs) ⇒ <code>Promise.&lt;Array.&lt;Object&gt;&gt;</code>
+* [grunt-nyc-mocha/tasks](api.md/tasks/index.md#module_grunt-nyc-mocha/tasks)
+    * [.registerMultiTaskNYCMocha(grunt)](api.md/tasks/index.md#module_grunt-nyc-mocha/tasks.registerMultiTaskNYCMocha)
 * [grunt-nyc-mocha/tasks/nycmocha](api.md/tasks/nycmocha.md#module_grunt-nyc-mocha/tasks/nycmocha)
     * [~executeNYCMocha(grunt, task, obj)](api.md/tasks/nycmocha.md#module_grunt-nyc-mocha/tasks/nycmocha..executeNYCMocha)
     * [~runTaskNYCMocha()](api.md/tasks/nycmocha.md#module_grunt-nyc-mocha/tasks/nycmocha..runTaskNYCMocha) ⇒ <code>Promise</code>
+    * [~registerMultiTaskNYCMocha(grunt)](api.md/tasks/nycmocha.md#module_grunt-nyc-mocha/tasks/nycmocha..registerMultiTaskNYCMocha)

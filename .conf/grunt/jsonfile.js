@@ -15,6 +15,7 @@ module.exports = function ( grunt, options ) {
       template:   "pkgjson",
       dest:       `${ options.BUILDDIR }/package.json`,
       merge: {
+        scripts:            undefined,
         "peerDependencies": undefined,
         "devDependencies":  undefined
       }

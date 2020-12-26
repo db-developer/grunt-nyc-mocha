@@ -5,10 +5,10 @@ const expect    = require( "expect.js"   );
 const path      = require( "path" );
 
 ( async function() {
-  const constants = require( "./0.0.constants" );
+  const constants = require( "./00.00.constants" );
   const env       = await constants.env;
 
-  describe( "2.0.options.nycmocha.spec.ts - Testing module 'lib/options/nycmocha.js'", () => {
+  describe( "02.00.options.nycmocha.spec.ts - Testing module 'lib/options/nycmocha.js'", () => {
     const nycmo = require( "../../lib/options/nycmocha" );
 
     describe( "Testing exports of module 'options/nycmocha'", () => {

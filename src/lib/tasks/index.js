@@ -1,4 +1,3 @@
-
 /**
  *	index.js: grunt-nyc-mocha/tasks
  *

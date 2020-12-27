@@ -14,7 +14,7 @@
 "use strict";
 
 /**
- *  Module initializer
+ *  Moduletable
  *  @ignore
  */
 const _m = {

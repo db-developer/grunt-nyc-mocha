@@ -7,7 +7,7 @@
   "engines": {
     "node": ">=10.15.1"
   },
-  "main": "tasks/tasks.js",
+  "main": "lib",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/db-developer/grunt-nyc-mocha.git"

@@ -21,15 +21,19 @@ module.exports = {
   DOT:      ".",
   ESLINT:   "eslint",
   GRUNT:    "grunt",
-  JSDOC:    "jsdoc",
   JSDOC2MD: "jsdoc2md",
   JSONFILE: "jsonfile",
   LIB:      "lib",
   MKDIR:    "mkdir",
+  MOVE:     "move",
+  NYCMOCHA: "nyc_mocha",
+  REPORTS:  "reports",
+  ROLLUP:   "rollup",
   SCRIPTS:  "scripts",
   SRC:      "src",
   TASKS:    "tasks",
   TEMPLATE: "template",
   TEST:     "test",
-  TMP:      "tmp"
+  TMP:      "tmp",
+  WEBPACK:  "webpack"
 }

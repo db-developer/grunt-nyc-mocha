@@ -9,4 +9,3 @@
 package-lock.json
 /**/planradar.json
 /.nyc_output/
-env.bat

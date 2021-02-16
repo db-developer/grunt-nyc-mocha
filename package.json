@@ -54,7 +54,7 @@
     "grunt-contrib-copy": "^1.0.0",
     "grunt-eslint": "^23.0.0",
     "grunt-jsdoc2md": "0.0.6",
-    "grunt-jsonfile": "^0.2.6",
+    "grunt-jsonfile": "^0.2.7",
     "grunt-mkdir": "^1.1.0",
     "grunt-mocha": "^1.2.0",
     "grunt-mocha-istanbul": "^5.0.2",

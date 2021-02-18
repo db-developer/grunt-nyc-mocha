@@ -44,7 +44,7 @@
     "source-map-support": "^0.5.19"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.16",
+    "@babel/core": "^7.12.17",
     "@rollup/plugin-commonjs": "^17.1.0",
     "babel-loader": "^8.2.2",
     "expect.js": "^0.3.1",

@@ -3,9 +3,9 @@
 By contributing (aka sending in pull requests) you certify that:
 
 * Your Contributions are either:
- 1. Created in whole or in part by you and you have the right to submit it under the designated license; or
- 2. Based upon previous work that, to the best of your knowledge, is covered under an appropriate open source license and you have the right under that license to submit that work with modifications, whether created in whole or in part by you, under the designated license; or
- 3. Provided directly to you by some other person who certified (1) or (2) and you have not modified them.
+  1. Created in whole or in part by you and you have the right to submit it under the designated license; or
+  2. Based upon previous work that, to the best of your knowledge, is covered under an appropriate open source license and you have the right under that license to submit that work with modifications, whether created in whole or in part by you, under the designated license; or
+  3. Provided directly to you by some other person who certified (1) or (2) and you have not modified them.
 * You understand and agree that the Project 'grunt-angularjson-append-projects' and your Contributions are public and that a record of the Contributions (including all metadata and personal information you submit with them) is maintained indefinitely and may be redistributed consistent with the projects's policies and the requirements of the MIT license where they are relevant.
 * You are granting your Contributions to slashlib.org, Dirk Brenckmann under the terms of the license as noted in the project’s repository.
 

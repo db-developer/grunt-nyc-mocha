@@ -61,7 +61,7 @@
     "grunt-move": "^1.0.3",
     "grunt-rollup": "^11.5.0",
     "grunt-shell": "^3.0.1",
-    "grunt-webpack": "^4.0.2",
+    "grunt-webpack": "^4.0.3",
     "istanbul": "^0.4.5",
     "load-grunt-config": "^3.0.1",
     "load-grunt-tasks": "^5.1.0",

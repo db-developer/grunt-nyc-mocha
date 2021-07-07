@@ -39,7 +39,7 @@
   "homepage": "https://github.com/db-developer/grunt-nyc-mocha#readme",
   "dependencies": {
     "grunt": "^1.4.1",
-    "mocha": "^9.0.1",
+    "mocha": "^9.0.2",
     "nyc": "^15.1.0",
     "source-map-support": "^0.5.19"
   },

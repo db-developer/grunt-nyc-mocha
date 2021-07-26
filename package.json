@@ -58,7 +58,7 @@
     "grunt-mocha": "^1.2.0",
     "grunt-mocha-istanbul": "^5.0.2",
     "grunt-move": "^1.0.3",
-    "grunt-rollup": "^11.5.0",
+    "grunt-rollup": "^11.9.0-0",
     "grunt-shell": "^3.0.1",
     "grunt-webpack": "^4.0.3",
     "istanbul": "^0.4.5",

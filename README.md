@@ -24,6 +24,8 @@ grunt task for running tests and coverage, based on nyc and mocha.
   * [Frameworks used for building and running grunt-nyc-mocha](docs/frameworks.md)
   * [API of package grunt-nyc-mocha](docs/api.index.md)
 
+[Changelog](CHANGELOG.md)
+
 ## getting started ##
 
 This guide assumes, that you are familiar with the use of [npm](https://npmjs.com "Homepage of npm") and [grunt](https://gruntjs.com "Homepage of grunt").  

@@ -239,7 +239,7 @@ function toArgsImpl( grunt, task, options ) {
       args.push( _STRINGS.OPTIONS_CWD, options.cwd );
 
       /*
-       *  NYC:  Set current working directory --cwd
+       *  NYC:  Set directory for temporary files --temp-dir
        */
       if ( options.nyc.temp ) {
            args.push( _STRINGS.OPTIONS_TEMP_DIR, _m.path.resolve( options.cwd, options.nyc.temp ));

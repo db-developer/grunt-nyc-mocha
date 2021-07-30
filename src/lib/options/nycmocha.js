@@ -109,12 +109,13 @@ function getNYCSourcemapOptions() {
  */
 function getNYCOptions() {
   return {
-    all:            false,
+    all:            false,              // whether or not to instrument all files
+                                        // (not just the ones touched by your test suite)
     clean:          undefined,          // clean .nyc_output folder before testing
-    exec:           false,              // path to node_modules/.../nyc script
     excludes:       false,              // array of files and directories to exclude
+    exec:           false,              // path to node_modules/.../nyc script
     extensions:     false,              // additional extensions that nyc should handle
-    includes:       false,              // array of files and directories to inclode
+    includes:       false,              // array of files and directories to include
     opts:           false,              // additional options not covered by this grunt plugin
     requires:       false,              // array of scripts to additionally require
     temp:           false,              // directory to output raw coverage information
@@ -128,7 +129,7 @@ function getNYCOptions() {
  */
 function getMochaOptions() {
   return {
-    bail:           undefined,           // abort ("bail") after first test failure
+    bail:           undefined,          // abort ("bail") after first test failure
     color:          false,              // force colored output
     exec:           false,              // path to node_modules/.../mocha script
     exit:           false,              // force Mocha to quit after tests complete

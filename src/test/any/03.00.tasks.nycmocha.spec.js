@@ -128,12 +128,13 @@ const expect    = require( "expect.js"   );
       });
     });
     describe( "Testing function 'registerMultiTaskNYCMocha' of module 'nycmocha'", () => {
-      const errmsg  = "Cannot read property 'registerMultiTask' of undefined";
+      const errmsg      = "Cannot read property 'registerMultiTask' of undefined";
+      const errmsg_v_16 = "Cannot read properties of undefined (reading 'registerMultiTask')"
       it( "should not be callable without parameters", () => {
           expect(() => { tasks.registerMultiTaskNYCMocha(); }).to.throwException(( error ) => {
             // console.log( error );
             expect( error ).to.be.an( Error );
-            expect( error.message === errmsg ).to.be.ok();
+            expect(( error.message === errmsg ) || ( error.message === errmsg_v_16 )).to.be.ok();
           });
       });
       it( "should be callable with parameter 'grunt' {grunt}", () => {

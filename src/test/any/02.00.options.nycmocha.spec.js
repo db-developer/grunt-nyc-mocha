@@ -46,11 +46,12 @@ const path      = require( "path" );
     });
     describe( "Testing function 'getTaskOptions' of module 'options/nycmocha'", () => {
       it( "should not be callable without parameters", () => {
-          const errmsg = "Cannot read property 'options' of undefined";
+          const errmsg      = "Cannot read property 'options' of undefined";
+          const errmsg_v_16 = "Cannot read properties of undefined (reading 'options')"
           expect(() => { nycmo.getTaskOptions(); }).to.throwException(( error ) => {
-            // console.log( error );
+            console.log( error );
             expect( error ).to.be.a( TypeError );
-            expect( error.message === errmsg ).to.be.ok();
+            expect(( error.message === errmsg ) || ( error.message === errmsg_v_16 )).to.be.ok();
           });
       });
       it( "should be callable with parameter 'task' {grunt.task}", () => {

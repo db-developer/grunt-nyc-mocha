@@ -4,8 +4,9 @@
   "description": "grunt task for running tests and coverage, based on nyc and mocha.",
   "author": "Dirk Brenckmann <db.developer@gmx.de>",
   "license": "MIT",
+  "engineStrict": true,
   "engines": {
-    "node": ">=10.15.1"
+    "node": ">=14"
   },
   "main": "lib",
   "repository": {
@@ -60,7 +61,7 @@
     "grunt-mocha-istanbul": "^5.0.2",
     "grunt-move": "^1.0.3",
     "grunt-rollup": "^11.9.0",
-    "grunt-shell": "^3.0.1",
+    "grunt-shell": "^4.0.0",
     "grunt-webpack": "^5.0.0",
     "istanbul": "^0.4.5",
     "load-grunt-config": "^4.0.1",

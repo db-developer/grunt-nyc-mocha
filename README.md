@@ -8,7 +8,7 @@ grunt task for running tests and coverage, based on nyc and mocha.
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.svg)](https://gruntjs.com/)
 [![codecov](https://codecov.io/gh/db-developer/grunt-nyc-mocha/branch/master/graph/badge.svg)](https://codecov.io/gh/db-developer/grunt-nyc-mocha)
 [![Build Status](https://travis-ci.com/db-developer/grunt-nyc-mocha.svg?branch=master)](https://travis-ci.com/db-developer/grunt-nyc-mocha)
-[![dependencies](https://david-dm.org/db-developer/grunt-nyc-mocha.svg)](https://david-dm.org/)
+[![dependencies](https://img.shields.io/librariesio/release/npm/grunt-nyc-mocha)](https://libraries.io/)
 
 ## content ##
 

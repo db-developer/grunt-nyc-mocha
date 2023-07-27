@@ -63,11 +63,11 @@
     "grunt-move": "^2.0.0",
     "grunt-rollup": "^12.0.0",
     "grunt-shell": "^4.0.0",
-    "grunt-webpack": "^5.0.0",
+    "grunt-webpack": "^6.0.0",
     "istanbul": "^0.4.5",
     "load-grunt-config": "^4.0.1",
     "load-grunt-tasks": "^5.1.0",
     "rollup-plugin-terser": "^7.0.2",
-    "webpack": "^5.75.0"
+    "webpack": "^5.88.2"
   }
 }

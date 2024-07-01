@@ -9,7 +9,7 @@
  *  options/nycmocha.js  is distributed WITHOUT ANY WARRANTY; without even the
  *  implied warranty of  MERCHANTABILITY or FITNESS FOR  A PARTICULAR PURPOSE.
  *
- *//* eslint-disable-next-line */
+ */
 "use strict";
 
 /**
@@ -466,18 +466,16 @@ function toArgs( grunt, task ) {
   catch( error ) { return Promise.reject( error ); }
 }
 
-/* eslint-disable */
 // Module exports:
 Object.defineProperty( module.exports, _STRINGS.GETOPTIONS,     {
-       value:    getOptions,
-       writable: false, enumerable: true, configurable: false });
+  value:    getOptions,
+  writable: false, enumerable: true, configurable: false });
 Object.defineProperty( module.exports, _STRINGS.GETTASKOPTIONS, {
-       value:    getTaskOptions,
-       writable: false, enumerable: true, configurable: false });
+  value:    getTaskOptions,
+  writable: false, enumerable: true, configurable: false });
 Object.defineProperty( module.exports, _STRINGS.TOARGS,         {
-       value:    toArgs,
-       writable: false, enumerable: true, configurable: false });
+  value:    toArgs,
+  writable: false, enumerable: true, configurable: false });
 Object.defineProperty( module.exports, _STRINGS.TOARGSIMPL,     {
-       value:    toArgsImpl,
-       writable: false, enumerable: true, configurable: false });
-/* eslint-enable */
+  value:    toArgsImpl,
+  writable: false, enumerable: true, configurable: false });

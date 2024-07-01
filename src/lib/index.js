@@ -10,7 +10,7 @@
  *  index.js  is distributed WITHOUT ANY WARRANTY; without even the implied
  *  warranty  of  MERCHANTABILITY  or  FITNESS  FOR  A PARTICULAR  PURPOSE.
  *
- *//* eslint-disable-next-line */
+ */
 "use strict";
 
 /**
@@ -29,7 +29,6 @@ const _STRINGS = {
   REGISTERMULTITASKNYCMOCHA:  "registerMultiTaskNYCMocha"
 }
 
-/* eslint-disable */
 // Module exports:
 /**
  *  Register a multitask for nyc_mocha.
@@ -41,6 +40,5 @@ const _STRINGS = {
  *  @param  {grunt} grunt
  */
 Object.defineProperty( module.exports, _STRINGS.REGISTERMULTITASKNYCMOCHA, {
-       value:    _m.tasks.registerMultiTaskNYCMocha,
-       writable: false, enumerable: true, configurable: false });
-/* eslint-enable */
+  value:    _m.tasks.registerMultiTaskNYCMocha,
+  writable: false, enumerable: true, configurable: false });

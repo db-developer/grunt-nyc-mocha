@@ -9,7 +9,7 @@
  *  tasks/nycmocha.js  is distributed WITHOUT ANY WARRANTY; without even the
  *  implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  *
- *//* eslint-disable-next-line */
+ */
 "use strict";
 
 /**
@@ -137,15 +137,13 @@ function registerMultiTaskNYCMocha( grunt ) {
   });
 }
 
-/* eslint-disable */
 // Module exports:
 Object.defineProperty( module.exports, _STRINGS.EXECUTENYCMOCHA,  {
-       value:    executeNYCMocha,
-       writable: false, enumerable: true, configurable: false });
+  value:    executeNYCMocha,
+  writable: false, enumerable: true, configurable: false });
 Object.defineProperty( module.exports, _STRINGS.REGISTERMULTITASKNYCMOCHA, {
-       value:    registerMultiTaskNYCMocha,
-       writable: false, enumerable: true, configurable: false });
+  value:    registerMultiTaskNYCMocha,
+  writable: false, enumerable: true, configurable: false });
 Object.defineProperty( module.exports, _STRINGS.RUNTASKNYCMOCHA,  {
-       value:    runTaskNYCMocha,
-       writable: false, enumerable: true, configurable: false });
-/* eslint-enable */
+  value:    runTaskNYCMocha,
+  writable: false, enumerable: true, configurable: false });

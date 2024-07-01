@@ -11,7 +11,7 @@
  *  lib.js  is distributed WITHOUT ANY WARRANTY; without even the implied
  *  warranty of  MERCHANTABILITY or  FITNESS  FOR  A PARTICULAR  PURPOSE.
  *
- *//* eslint-disable-next-line */
+ */
 "use strict";
 
 /**
@@ -38,6 +38,7 @@ const _STRINGS = {
  *  @return {string}  path to mocha
  */
 function getMochaPath( grunt ) {
+  /* eslint-disable no-unused-vars */
   try { return require.resolve( _STRINGS.PATH_BIN_MOCHA ); }
   catch( error ) { /* istanbul ignore next */ grunt.fail.fatal( _STRINGS.ERROR_PEER_DEPENDENCY_MOCHA ); }
 }
@@ -49,6 +50,7 @@ function getMochaPath( grunt ) {
  *  @return {string}  path to nyc
  */
 function getNYCPath( grunt ) {
+  /* eslint-disable no-unused-vars */
   try { return require.resolve( _STRINGS.PATH_BIN_NYC ); }
   catch( error ) { /* istanbul ignore next */  grunt.fail.fatal( _STRINGS.ERROR_PEER_DEPENDENCY_NYC ); }
 }
@@ -69,15 +71,13 @@ function isArray( grunt, options, name, callback ) {
   else throw new Error( _STRINGS.MSG_ARRAY_EXPECTED.replace( _STRINGS.TAG_NAME, name ));
 }
 
-/* eslint-disable */
 // Module exports:
 Object.defineProperty( module.exports, _STRINGS.GETMOCHAPATH,     {
-       value:    getMochaPath,
-       writable: false, enumerable: true, configurable: false });
+  value:    getMochaPath,
+  writable: false, enumerable: true, configurable: false });
 Object.defineProperty( module.exports, _STRINGS.GETNYCPATH,       {
-       value:    getNYCPath,
-       writable: false, enumerable: true, configurable: false });
+  value:    getNYCPath,
+  writable: false, enumerable: true, configurable: false });
 Object.defineProperty( module.exports, _STRINGS.ISARRAY,          {
-       value:    isArray,
-       writable: false, enumerable: true, configurable: false });
-/* eslint-enable */
+  value:    isArray,
+  writable: false, enumerable: true, configurable: false });

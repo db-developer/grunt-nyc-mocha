@@ -10,7 +10,7 @@
  *  index.js  is distributed WITHOUT ANY WARRANTY; without even the implied
  *  warranty  of  MERCHANTABILITY  or  FITNESS  FOR  A PARTICULAR  PURPOSE.
  *
- *//* eslint-disable-next-line */
+ */
 "use strict";
 
 /**
@@ -42,9 +42,8 @@ function toNYCMochaArgs( grunt, task ) {
   return _m.nycmocha.toArgs( grunt, task );
 }
 
-/* eslint-disable */
+
 // Module exports:
 Object.defineProperty( module.exports, _STRINGS.TONYCMOCHAARGS, {
-       value:    toNYCMochaArgs,
-       writable: false, enumerable: true, configurable: false });
-/* eslint-enable */
+  value:    toNYCMochaArgs,
+  writable: false, enumerable: true, configurable: false });

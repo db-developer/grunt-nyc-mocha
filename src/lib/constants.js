@@ -1,4 +1,3 @@
-
 /**
  *	constants.js: grunt-nyc-mocha
  *
@@ -23,12 +22,10 @@ const _STRINGS = {
   TASKDESCRIPTION_NYCMOCHA:     "Generate coverage reports with nyc from mocha testruns"
 };
 
-/* eslint-disable */
 // Module exports:
 Object.defineProperty( module.exports, _STRINGS.PROPERTY_TASKNAME_NYCMOCHA, {
-       value:    _STRINGS.TASKNAME_NYCMOCHA,
-       writable: false, enumerable: true, configurable: false });
+  value:    _STRINGS.TASKNAME_NYCMOCHA,
+  writable: false, enumerable: true, configurable: false });
 Object.defineProperty( module.exports, _STRINGS.PROPERTY_TASKDESC_NYCMOCHA, {
-       value:    _STRINGS.TASKDESCRIPTION_NYCMOCHA,
-       writable: false, enumerable: true, configurable: false });
-/* eslint-enable */
+  value:    _STRINGS.TASKDESCRIPTION_NYCMOCHA,
+  writable: false, enumerable: true, configurable: false });

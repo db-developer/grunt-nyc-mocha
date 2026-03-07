@@ -1,14 +1,16 @@
-# grunt-nyc-mocha #
-
-grunt task for running tests and coverage, based on nyc and mocha.
-
 [![npm version](https://img.shields.io/npm/v/grunt-nyc-mocha?color=blue)](https://www.npmjs.com/package/grunt-nyc-mocha)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![jsdoc](https://img.shields.io/static/v1?label=jsdoc&message=%20api%20&color=blue)](https://jsdoc.app/)
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.svg)](https://gruntjs.com/)
-[![codecov](https://codecov.io/gh/db-developer/grunt-nyc-mocha/branch/master/graph/badge.svg)](https://codecov.io/gh/db-developer/grunt-nyc-mocha)
-[![Build Status](https://travis-ci.com/db-developer/grunt-nyc-mocha.svg?branch=master)](https://travis-ci.com/db-developer/grunt-nyc-mocha)
 [![dependencies](https://img.shields.io/librariesio/release/npm/grunt-nyc-mocha)](https://libraries.io/)
+![Build & Test](https://github.com/db-developer/grunt-nyc-mocha/actions/workflows/ci.yml/badge.svg)
+[![codecov](https://codecov.io/gh/db-developer/grunt-nyc-mocha/branch/master/graph/badge.svg)](https://codecov.io/gh/db-developer/grunt-nyc-mocha)
+
+[BOTTOM](#using-grunt-nyc-mocha-with-load-grunt-config-and-load-grunt-tasks) [AI](AI.md) [CHANGELOG](CHANGELOG.md) [LICENSE](LICENSE)
+
+# grunt-nyc-mocha #
+
+grunt task for running tests and coverage, based on nyc and mocha.
 
 ## content ##
 
@@ -119,3 +121,5 @@ module.exports = function ( grunt, options ) {
   }
 };
 ```
+
+[TOP](#grunt-nyc-mocha) [AI](AI.md) [CHANGELOG](CHANGELOG.md) [LICENSE](LICENSE)

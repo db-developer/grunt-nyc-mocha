@@ -1,3 +1,5 @@
+[BOTTOM](#100---2021-07-26) [AI](AI.md) [LICENSE](LICENSE) [README](README.md)
+
 # Changelog
 
 All notable changes to this project will be documented in this file.
@@ -42,3 +44,5 @@ the time has come to switch to a stable major release number.
 ### Updates
 - updated mocha dependency
 - updated various developer dependencies
+
+[TOP](#changelog) [AI](AI.md) [LICENSE](LICENSE) [README](README.md)

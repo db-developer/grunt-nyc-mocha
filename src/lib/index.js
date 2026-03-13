@@ -1,44 +1,49 @@
 /**
- *	Package interface of grunt-nyc-mocha<br />
- *  All static members of this module are available for 3rd party access.
+ *	lib/index.js: grunt-nyc-mocha
+ *
+ *  Public API of the grunt-nyc-mocha package.
+ * 
+ *  Consumers MUST depend on this module path 
+ *  instead of internal implementation files.
+ *
+ *  The underlying implementation is intentionally 
+ *  encapsulated and may change without notice.
  *
  *  @module grunt-nyc-mocha
  *
  *//*
- *  © 2020, slashlib.org.
+ *  © 2026, db-developer.
  *
- *  index.js  is distributed WITHOUT ANY WARRANTY; without even the implied
- *  warranty  of  MERCHANTABILITY  or  FITNESS  FOR  A PARTICULAR  PURPOSE.
- *
+ *  Distributed  WITHOUT  ANY WARRANTY;  without  even the  implied
+ *  warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
 "use strict";
 
-/**
- *  Moduletable
- *  @ignore
- */
-const _m = {
-  tasks:    require( "./tasks" )
-}
+const constants = require( "./constants" );
+const tasks     = require( "./tasks"     );
 
 /**
- *  Stringtable
- *  @ignore
+ *  Registers the `nyc_mocha` Grunt multi task.
+ *
+ *  Attaches a multitask to the provided Grunt instance using the
+ *  configured task name and description from the constants module.
+ *  The registered task delegates execution to `tasks.runTask`
+ *  and propagates errors via `grunt.fail.fatal`.
+ *
+ *  @async
+ *  @function module:grunt-nyc-mocha.registerMultiTask
+ *  @param    {grunt} grunt - The Grunt instance used to register the multitask.
+ *  @returns  {Promise<void>} Resolves once the multitask has been registered.
  */
-const _STRINGS = {
-  REGISTERMULTITASKNYCMOCHA:  "registerMultiTaskNYCMocha"
+module.exports.registerMultiTask = function registerMultiTask( grunt ) {
+  grunt.registerMultiTask( constants.TASKNAME, constants.TASKDESCRIPTION,
+    /* istanbul ignore next */ async function () {
+      const task = this;
+      try {
+        await tasks.runTask( grunt, task );
+      } catch ( error ) {
+        grunt.log.error( error );
+        grunt.fail.fatal( error );
+      }
+    });
 }
-
-// Module exports:
-/**
- *  Register a multitask for nyc_mocha.
- *
- *  @see    Function [registerMultiTaskNYCMocha]{@link tasks/index.md#.registerMultiTaskNYCMocha}
- *          published by module tasks for a detailed function description.
- *
- *  @function module:grunt-nyc-mocha.registerMultiTaskNYCMocha
- *  @param  {grunt} grunt
- */
-Object.defineProperty( module.exports, _STRINGS.REGISTERMULTITASKNYCMOCHA, {
-  value:    _m.tasks.registerMultiTaskNYCMocha,
-  writable: false, enumerable: true, configurable: false });

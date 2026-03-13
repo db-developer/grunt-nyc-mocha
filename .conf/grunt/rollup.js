@@ -13,7 +13,8 @@ module.exports  = function ( grunt, options ) {
 
   return {
     options: {
-      external:   [ "fs", "path" /* node packages */ ],
+      external:   [ "fs",      "path",     /* node packages */
+                    "node:fs", "node:path" /* node packages */ ],
       format:     "cjs",
       plugins:    function() { return [ commonjs(), terser()]; },
       sourcemap:  "inline"

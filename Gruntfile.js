@@ -32,35 +32,35 @@ module.exports = function( grunt ) {
   require( "load-grunt-tasks"  )( grunt );
 
   // run lint and all tests by default before packaging
-  grunt.registerTask( strings.ALL,     [ strings.TEST, strings.DOCS, strings.BUILD,
-                                         strings.DIST, strings.DEPLOY ]);
+  grunt.registerTask( strings.ALL,      [ strings.TEST, strings.DOCS, strings.BUILD,
+                                          strings.DIST, strings.DEPLOY ]);
 
   // run lint and all tests by default before packaging
-  grunt.registerTask( strings.BUILD,   [ strings.ESLINT,   `${ strings.CLEAN }:build`,
-                                         strings.MKDIR,    `${ strings.COPY  }:build`,
-                                         strings.JSONFILE, strings.BUILDRO ]);
+  grunt.registerTask( strings.BUILD,    [ strings.ESLINT,   `${ strings.CLEAN }:build`,
+                                          strings.MKDIR,    `${ strings.COPY  }:build`,
+                                          strings.JSONFILE, strings.BUILDRO ]);
 
   // run rollup (there can be targets for webpack and rollup, but for now just rollup)
-  grunt.registerTask( strings.BUILDRO, [ strings.ROLLUP  ]);
+  grunt.registerTask( strings.BUILDRO,  [ strings.ROLLUP ]);
 
   // run coverage (required by travis)
-  grunt.registerTask( strings.COVERAGE, [ strings.TEST ]);
+  grunt.registerTask( strings.COVERAGE, [ `${ strings.SHELL }:coverage` ]);
 
   // run default
-  grunt.registerTask( strings.DEFAULT, [ strings.ALL ]);
+  grunt.registerTask( strings.DEFAULT,  [ strings.ALL ]);
 
   // run deploy: copy current.tgz from dist to _packages_ current.tgz & latest.tgz
-  grunt.registerTask( strings.DEPLOY,  [ `${ strings.COPY }:deploy` ]);
+  grunt.registerTask( strings.DEPLOY,   [ `${ strings.COPY }:deploy` ]);
 
   // run dist: clean dist and move current.tgz from cwd to dist
-  grunt.registerTask( strings.DIST,    [ `${ strings.CLEAN }:dist`, `${ strings.CALL_NPM }:pack` ]);
+  grunt.registerTask( strings.DIST,     [ `${ strings.CLEAN }:dist`,  `${ strings.CALL_NPM }:pack` ]);
 
   // run docs
-  grunt.registerTask( strings.DOCS,    [ strings.ESLINT, strings.JSDOC2MD ]);
+  grunt.registerTask( strings.DOCS,     [ strings.ESLINT, strings.JSDOC2MD ]);
 
   // run test
-  grunt.registerTask( strings.TEST,    [ strings.CHKOUTDATED, strings.ESLINT, strings.CLEAN,
-                                         strings.MKDIR,       `${ strings.COPY }:test`,
-                                         "mocha_istanbul" ]);
+  grunt.registerTask( strings.TEST,     [ strings.CHKOUTDATED,        strings.ESLINT, strings.CLEAN,
+                                          strings.MKDIR,              `${ strings.COPY }:test`,
+                                          `${ strings.SHELL }:test` ]);
 
 };

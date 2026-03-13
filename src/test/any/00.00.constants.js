@@ -1,11 +1,10 @@
 /**
- *  © 2020, slashlib.org.
+ *  © 2026, slashlib.org.
  */
 const grunt = require( "grunt" );
 
 const promise = new Promise(( resolve, reject ) => {
   const name     = "nyc_mocha";
-  const taskname = "target1";
 
   // note: this requires a "nyc_mocha.js" file in .conf/grunt (see gruntfile.js)
   grunt.task.registerMultiTask( name, "Test 'nyc_mocha' stuff", function() {

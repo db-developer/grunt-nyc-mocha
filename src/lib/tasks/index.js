@@ -1,47 +1,36 @@
 /**
- *	index.js: grunt-nyc-mocha/tasks
+ *	lib/tasks/index.js: grunt-nyc-mocha/tasks
+ *
+ *  Public API of the grunt-nyc-mocha/tasks module.
+ *
+ *  This module exposes the stable, documented interface
+ *  for running the plugins task
+ *
+ *  Consumers MUST depend on this module path instead of
+ *  internal implementation files.
+ *
+ *  The underlying implementation is intentionally 
+ *  encapsulated and may change without notice.
  *
  *  @module grunt-nyc-mocha/tasks
  *
  *//*
- *  © 2020, slashlib.org.
+ *  © 2026, db-developer.
  *
- *  index.js  is distributed WITHOUT ANY WARRANTY; without even the implied
- *  warranty  of  MERCHANTABILITY  or  FITNESS  FOR  A PARTICULAR  PURPOSE.
- *
+ *  Distributed  WITHOUT  ANY WARRANTY;  without  even the  implied
+ *  warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
 "use strict";
 
-/**
- *  Module initializer
- *  @ignore
- */
-const _m = {
-  nycmocha: require( "./nycmocha" )
-};
+const nycmocha = require( "./nycmocha" );
 
-/**
- *  Stringtable
- *  @ignore
- */
-const _STRINGS = {
-  REGISTERMULTITASKNYCMOCHA:  "registerMultiTaskNYCMocha",
-  RUNTASKNYCMOCHA:            "runTaskNYCMocha"
-};
-
-// Module exports:
 /**
  *  Register a multitask for nyc_mocha.
  *
- *  @see    Function [registerMultiTaskNYCMocha]{@link nycmocha.md#.registerMultiTaskNYCMocha}
- *          published by module nycmocha for a detailed function description.
+ *  @see Function [runTask]{@link nycmocha.md#.runTask}
+ *       published by module nycmocha for a detailed function description.
  *
- *  @function module:grunt-nyc-mocha/tasks.registerMultiTaskNYCMocha
- *  @param  {grunt} grunt
+ *  @function module:grunt-nyc-mocha/tasks.runTask
+ *  @param    {grunt} grunt
  */
-Object.defineProperty( module.exports, _STRINGS.REGISTERMULTITASKNYCMOCHA, {
-  value:    _m.nycmocha.registerMultiTaskNYCMocha,
-  writable: false, enumerable: true, configurable: false });
-Object.defineProperty( module.exports, _STRINGS.RUNTASKNYCMOCHA,  {
-  value:    _m.nycmocha.runTaskNYCMocha,
-  writable: false, enumerable: true, configurable: false });
+module.exports.runTask = nycmocha.runTask;

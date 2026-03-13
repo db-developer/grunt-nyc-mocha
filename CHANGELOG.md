@@ -14,6 +14,14 @@ All notable changes to this project will be documented in this file.
 
 - No Fixes yet
 
+## [1.3.0] - 2026-03-12
+
+Removed istanbul from buildchain
+Introduced nyc in buildchain
+Added many additional tests
+Completely overhauled code
+Switched build process from istanbul to nyc
+
 ## [1.2.0] - 2024-07-01
 
 Updated dependencies (versions) in package.json

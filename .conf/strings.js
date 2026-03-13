@@ -31,10 +31,10 @@ module.exports = {
   REPORTS:      "reports",
   ROLLUP:       "rollup",
   SCRIPTS:      "scripts",
+  SHELL:        "shell",
   SRC:          "src",
   TASKS:        "tasks",
   TEMPLATE:     "template",
   TEST:         "test",
-  TMP:          "tmp",
-  WEBPACK:      "webpack"
+  TMP:          "tmp"
 }

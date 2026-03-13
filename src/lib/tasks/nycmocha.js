@@ -1,52 +1,55 @@
 /**
- *	tasks/nycmocha.js: grunt-nyc-mocha
+ *	lib/tasks/nycmocha.js: grunt-nyc-mocha
+ *
+ *  Internal implementation for running the grunt-nyc-mocha
+ *  plugin task.
+ *
+ *  ⚠ This module is NOT part of the public API surface.
+ *  It may change at any time without semver guarantees.
+ *
+ *  External consumers MUST use `grunt-nyc-mocha/tasks` instead.
  *
  *  @module grunt-nyc-mocha/tasks/nycmocha
  *
  *//*
- *  © 2020, slashlib.org.
+ *  © 2026, db-developer.
  *
- *  tasks/nycmocha.js  is distributed WITHOUT ANY WARRANTY; without even the
- *  implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
- *
+ *  Distributed  WITHOUT  ANY WARRANTY;  without  even the  implied
+ *  warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  */
 "use strict";
 
-/**
- *  Module initializer
- *  @ignore
- */
-const _m = {
-  const:        require( "../constants" ),
-  nycmochaopts: require( "../options/nycmocha" )
-};
+const options = require( "../options" );
 
 /**
- *  Stringtable initializer
+ *  @constant {string}
+ *  @default
  *  @ignore
  */
-function _init_STRINGS() {
-  const executenycmocha = "executeNYCMocha";
-  const missingproperty = "Missing property";
+const FNCTNAME = "execute";
 
-  return {
-    ERROR_MSG_MISSING_ARGS:     `${ executenycmocha }: ${ missingproperty } 'obj.args'.`,
-    ERROR_MSG_MISSING_OPTS:     `${ executenycmocha }: ${ missingproperty } 'obj.opts'.`,
-    ERROR_MSG_MISSING_CWD:      `${ executenycmocha }: ${ missingproperty } 'options.cwd'.`,
-    ERROR_MSG_MISSING_NODEEXEC: `${ executenycmocha }: ${ missingproperty } 'options.node.exec'.`,
-    EXECUTENYCMOCHA:            `${ executenycmocha }`,
-    IGNORE:                     "ignore",
-    INHERIT:                    "inherit",
-    REGISTERMULTITASKNYCMOCHA:  "registerMultiTaskNYCMocha",
-    RUNTASKNYCMOCHA:            "runTaskNYCMocha"
-  };
+/**
+ *  @constant {string}
+ *  @default
+ *  @ignore
+ */
+const MISSINGPROPERTY = "Missing property";
+
+/**
+ *  Returns normalized messages about missing properties.
+ * 
+ *  @example
+ *    getMissingMessage( "obj.args" )          // => "execute: Missing property 'obj.args'."
+ *    getMissingMessage( "obj.opts" )          // => "execute: Missing property 'obj.opts'."
+ *    getMissingMessage( "options.cwd" )       // => "execute: Missing property 'options.cwd'."
+ *    getMissingMessage( "options.node.exec" ) // => "execute: Missing property 'options.node.exec'."
+ * 
+ *  @param   {string} propertyname - Name or description of a property
+ *  @returns {string} normalized messages about a missing property.
+ */
+module.exports.getMissingMessage = function getMissingMessage( propertyname ) {
+  return `${ FNCTNAME }: ${ MISSINGPROPERTY } '${ propertyname }'.`;
 }
-
-/**
- *  Stringtable
- *  @ignore
- */
-const _STRINGS = _init_STRINGS();
 
 /**
  *  Return a promise for executing
@@ -56,47 +59,61 @@ const _STRINGS = _init_STRINGS();
  *  @param  {grunt.task}  task  the current task
  *  @param  {Object}      obj wrapper for options and arguments.
  */
-function executeNYCMocha( grunt, task, obj ) {
+module.exports.execute = async function execute( grunt, task, obj ) {
+  let args = undefined;
+  if ( ! obj?.args ) {
+       throw new Error( module.exports.getMissingMessage( "obj.args" ));
+  }
+  else args = obj.args;
+
+  let options = undefined;
+  if ( ! obj?.opts ) {
+       throw new Error( module.exports.getMissingMessage( "obj.opts" ));
+  }
+  else  options = obj.opts;
+
+  const env = process.env;
+
+  let   cwd = undefined;
+  if ( ! options.cwd ) {
+       throw new Error( module.exports.getMissingMessage( "options.cwd" ));
+  }
+  else cwd = options.cwd;
+
+  let   stdio = options.quiet ? "ignore" : "inherit";
+  const opts  = { env, cwd, stdio };
+
+  let   cmd = undefined;
+  if ( ! options.node.exec ) {
+       throw new Error( module.exports.getMissingMessage( "options.node.exec" ));
+  }
+  else cmd = options.node.exec;
+
+  const logmsg = `Will execute (stdio: '${ stdio }'): ${ cmd } ${ args.join( " " )}`;
+
+  if ( options.dryrun ) {
+       grunt.log.ok( logmsg );
+       return obj;
+  }
+  else {
+       grunt.verbose.ok( logmsg );
+       return module.exports.spawn( grunt, task, obj, cmd, args, opts );
+  }
+}
+
+/**
+ *  Promisification of grunts spawn functionality.
+ * 
+ *  @param  {grunt}      grunt 
+ *  @param  {grunt.task} task 
+ *  @param  {Object}     obj   - wrapper for options and arguments.
+ *  @param  {string}     cmd 
+ *  @param  {string}     args 
+ *  @param  {*}          opts 
+ * 
+ */
+module.exports.spawn = async function spawn( grunt, task, obj, cmd, args, opts ) {
   return new Promise(( resolve, reject ) => {
-    try {
-      let args = undefined;
-      if (( ! obj ) || ( ! obj.args )) {
-            throw new Error( _STRINGS.ERROR_MSG_MISSING_ARGS );
-      }
-      else args = obj.args;
-
-      let options = undefined;
-      if (( ! obj ) || ( ! obj.opts )) {
-            throw new Error( _STRINGS.ERROR_MSG_MISSING_OPTS );
-      }
-      else  options = obj.opts;
-
-      const env = process.env;
-
-      let   cwd = undefined;
-      if ( ! options.cwd ) {
-           throw new Error( _STRINGS.ERROR_MSG_MISSING_CWD );
-      }
-      else cwd = options.cwd;
-
-      let   stdio = options.quiet ? _STRINGS.IGNORE : _STRINGS.INHERIT;
-      const opts  = { env, cwd, stdio };
-
-      let   cmd = undefined;
-      if ( ! options.node.exec ) {
-           throw new Error( _STRINGS.ERROR_MSG_MISSING_NODEEXEC );
-      }
-      else cmd = options.node.exec;
-
-      const logmsg = `Will execute (stdio: '${ stdio }'): ${ cmd } ${ args.join( " " )}`;
-      /* istanbul ignore else */
-      if ( options.dryrun ) {
-           grunt.log.ok( logmsg );
-           return resolve( obj );
-      }
-      else grunt.verbose.ok( logmsg );
-
-      /* istanbul ignore next */
       grunt.util.spawn({ cmd, args, opts }, ( error, result ) => {
         if ( ! error ) {
              obj.result = result;
@@ -104,8 +121,6 @@ function executeNYCMocha( grunt, task, obj ) {
         }
         else reject( error );
       });
-    }
-    catch( error ) { reject( error ); }
   });
 }
 
@@ -114,36 +129,7 @@ function executeNYCMocha( grunt, task, obj ) {
  *
  *  @return {Promise} ... required by callee to terminate async call (on "then")
  */
-function runTaskNYCMocha( grunt, task ) {
-  let    promise = _m.nycmochaopts.toArgs( grunt, task ); // prepare args for test runs ...
-         promise = promise.then(( obj ) => { // run the tests...
-                     return executeNYCMocha( grunt, task, obj );
-                   });
-  return promise;
+module.exports.runTask = async function runTask( grunt, task ) {
+  const obj = options.toArgs( grunt, task ); // prepare args for test runs ...
+  return module.exports.execute( grunt, task, obj );
 }
-
-/**
- *  Registers the 'nyc_mocha' multitask.
- *
- *  @param  {grunt} grunt
- */
-function registerMultiTaskNYCMocha( grunt ) {
-  grunt.registerMultiTask( _m.const.TASKNAME_NYCMOCHA, _m.const.TASKDESCRIPTION_NYCMOCHA,
-    /* istanbul ignore next */ function () {
-      const task = this;
-      const done = task.async();
-      runTaskNYCMocha( grunt, task ).then((       ) => { done(); },
-                                          ( error ) => { grunt.log.error( error ); done( false ); });
-  });
-}
-
-// Module exports:
-Object.defineProperty( module.exports, _STRINGS.EXECUTENYCMOCHA,  {
-  value:    executeNYCMocha,
-  writable: false, enumerable: true, configurable: false });
-Object.defineProperty( module.exports, _STRINGS.REGISTERMULTITASKNYCMOCHA, {
-  value:    registerMultiTaskNYCMocha,
-  writable: false, enumerable: true, configurable: false });
-Object.defineProperty( module.exports, _STRINGS.RUNTASKNYCMOCHA,  {
-  value:    runTaskNYCMocha,
-  writable: false, enumerable: true, configurable: false });
